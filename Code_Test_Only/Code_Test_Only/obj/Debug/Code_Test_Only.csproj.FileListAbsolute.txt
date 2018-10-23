@@ -1,0 +1,12 @@
+d:\documents\visual studio 2012\Projects\Code_Test_Only\Code_Test_Only\bin\Debug\Code_Test_Only.exe
+d:\documents\visual studio 2012\Projects\Code_Test_Only\Code_Test_Only\bin\Debug\Code_Test_Only.pdb
+d:\documents\visual studio 2012\Projects\Code_Test_Only\Code_Test_Only\bin\Debug\AForge.Video.DirectShow.dll
+d:\documents\visual studio 2012\Projects\Code_Test_Only\Code_Test_Only\bin\Debug\AForge.Video.dll
+d:\documents\visual studio 2012\Projects\Code_Test_Only\Code_Test_Only\bin\Debug\zxing.dll
+d:\documents\visual studio 2012\Projects\Code_Test_Only\Code_Test_Only\bin\Debug\AForge.dll
+d:\documents\visual studio 2012\Projects\Code_Test_Only\Code_Test_Only\bin\Debug\AForge.Video.xml
+d:\documents\visual studio 2012\Projects\Code_Test_Only\Code_Test_Only\bin\Debug\AForge.Video.DirectShow.xml
+d:\documents\visual studio 2012\Projects\Code_Test_Only\Code_Test_Only\bin\Debug\AForge.xml
+d:\documents\visual studio 2012\Projects\Code_Test_Only\Code_Test_Only\obj\Debug\Code_Test_Only.csprojResolveAssemblyReference.cache
+d:\documents\visual studio 2012\Projects\Code_Test_Only\Code_Test_Only\obj\Debug\Code_Test_Only.exe
+d:\documents\visual studio 2012\Projects\Code_Test_Only\Code_Test_Only\obj\Debug\Code_Test_Only.pdb
