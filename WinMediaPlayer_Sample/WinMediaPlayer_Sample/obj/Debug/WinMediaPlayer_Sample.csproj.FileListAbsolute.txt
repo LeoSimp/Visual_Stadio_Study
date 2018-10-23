@@ -10,3 +10,8 @@ d:\documents\visual studio 2012\Projects\WinMediaPlayer_Sample\WinMediaPlayer_Sa
 d:\documents\visual studio 2012\Projects\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\WinMediaPlayer_Sample.csproj.GenerateResource.Cache
 d:\documents\visual studio 2012\Projects\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\WinMediaPlayer_Sample.exe
 d:\documents\visual studio 2012\Projects\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\WinMediaPlayer_Sample.pdb
+D:\GitHub\Visual_Studio_Study\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\Interop.WMPLib.dll
+D:\GitHub\Visual_Studio_Study\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\AxInterop.WMPLib.dll
+D:\GitHub\Visual_Studio_Study\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\WinMediaPlayer_Sample.csproj.ResolveComReference.cache
+D:\GitHub\Visual_Studio_Study\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\WinMediaPlayer_Sample.exe
+D:\GitHub\Visual_Studio_Study\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\WinMediaPlayer_Sample.pdb
