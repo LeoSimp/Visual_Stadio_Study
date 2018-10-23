@@ -1,0 +1,12 @@
+d:\documents\visual studio 2012\Projects\WinMediaPlayer_Sample\WinMediaPlayer_Sample\bin\Debug\WinMediaPlayer_Sample.exe
+d:\documents\visual studio 2012\Projects\WinMediaPlayer_Sample\WinMediaPlayer_Sample\bin\Debug\WinMediaPlayer_Sample.pdb
+d:\documents\visual studio 2012\Projects\WinMediaPlayer_Sample\WinMediaPlayer_Sample\bin\Debug\Interop.WMPLib.dll
+d:\documents\visual studio 2012\Projects\WinMediaPlayer_Sample\WinMediaPlayer_Sample\bin\Debug\AxInterop.WMPLib.dll
+d:\documents\visual studio 2012\Projects\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\Interop.WMPLib.dll
+d:\documents\visual studio 2012\Projects\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\AxInterop.WMPLib.dll
+d:\documents\visual studio 2012\Projects\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\WinMediaPlayer_Sample.csproj.ResolveComReference.cache
+d:\documents\visual studio 2012\Projects\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\WinMediaPlayer_Sample.Form1.resources
+d:\documents\visual studio 2012\Projects\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\WinMediaPlayer_Sample.Properties.Resources.resources
+d:\documents\visual studio 2012\Projects\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\WinMediaPlayer_Sample.csproj.GenerateResource.Cache
+d:\documents\visual studio 2012\Projects\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\WinMediaPlayer_Sample.exe
+d:\documents\visual studio 2012\Projects\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\WinMediaPlayer_Sample.pdb
