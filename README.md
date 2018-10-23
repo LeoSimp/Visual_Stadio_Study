@@ -1,2 +1,2 @@
-# Visual_Stadio_Study
+# Visual_Studio_Study
 For C#, C++ study 
