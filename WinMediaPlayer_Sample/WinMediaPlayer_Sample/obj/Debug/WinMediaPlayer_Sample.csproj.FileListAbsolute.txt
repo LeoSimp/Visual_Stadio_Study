@@ -15,3 +15,8 @@ D:\GitHub\Visual_Studio_Study\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\De
 D:\GitHub\Visual_Studio_Study\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\WinMediaPlayer_Sample.csproj.ResolveComReference.cache
 D:\GitHub\Visual_Studio_Study\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\WinMediaPlayer_Sample.exe
 D:\GitHub\Visual_Studio_Study\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\WinMediaPlayer_Sample.pdb
+E:\users\leo\GitHub\Visual_Studio_Study\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\Interop.WMPLib.dll
+E:\users\leo\GitHub\Visual_Studio_Study\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\AxInterop.WMPLib.dll
+E:\users\leo\GitHub\Visual_Studio_Study\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\WinMediaPlayer_Sample.csproj.ResolveComReference.cache
+E:\users\leo\GitHub\Visual_Studio_Study\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\WinMediaPlayer_Sample.exe
+E:\users\leo\GitHub\Visual_Studio_Study\WinMediaPlayer_Sample\WinMediaPlayer_Sample\obj\Debug\WinMediaPlayer_Sample.pdb
