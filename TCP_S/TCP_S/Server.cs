@@ -105,10 +105,11 @@ public partial class Server : Form
 
     private void Server_FormClosing(object sender, FormClosingEventArgs e)
     {
-        DialogResult r1 = MessageBox.Show("是否要关闭此窗口：" + this.Text, "YesNo", MessageBoxButtons.YesNo);
+        DialogResult r1 = MessageBox.Show("是否要关闭此窗口：" + Text, "YesNo", MessageBoxButtons.YesNo);
         if (r1 == DialogResult.Yes)
         {
             e.Cancel = false;
+            
         }
         else
         {

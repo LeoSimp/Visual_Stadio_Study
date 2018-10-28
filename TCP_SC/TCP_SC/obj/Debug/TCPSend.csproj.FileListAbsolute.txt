@@ -1,0 +1,8 @@
+C:\Users\Leo\Documents\Visual Studio 2013\Projects\TCPSend\TCPSend\bin\Debug\TCPSend.exe
+C:\Users\Leo\Documents\Visual Studio 2013\Projects\TCPSend\TCPSend\bin\Debug\TCPSend.pdb
+C:\Users\Leo\Documents\Visual Studio 2013\Projects\TCPSend\TCPSend\obj\Debug\TCPSend.csprojResolveAssemblyReference.cache
+C:\Users\Leo\Documents\Visual Studio 2013\Projects\TCPSend\TCPSend\obj\Debug\TCPSend.Form1.resources
+C:\Users\Leo\Documents\Visual Studio 2013\Projects\TCPSend\TCPSend\obj\Debug\TCPSend.Properties.Resources.resources
+C:\Users\Leo\Documents\Visual Studio 2013\Projects\TCPSend\TCPSend\obj\Debug\TCPSend.csproj.GenerateResource.Cache
+C:\Users\Leo\Documents\Visual Studio 2013\Projects\TCPSend\TCPSend\obj\Debug\TCPSend.exe
+C:\Users\Leo\Documents\Visual Studio 2013\Projects\TCPSend\TCPSend\obj\Debug\TCPSend.pdb
