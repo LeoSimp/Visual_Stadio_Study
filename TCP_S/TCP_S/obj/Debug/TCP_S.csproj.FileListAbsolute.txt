@@ -19,3 +19,13 @@ E:\visual studio 2013\Projects\TCP_S\TCP_S\obj\Debug\TCP_S.csprojResolveAssembly
 E:\visual studio 2013\Projects\TCP_S\TCP_S\obj\Debug\TCP_SC.Server.resources
 E:\visual studio 2013\Projects\TCP_S\TCP_S\obj\Debug\TCP_S.Properties.Resources.resources
 E:\visual studio 2013\Projects\TCP_S\TCP_S\obj\Debug\TCP_S.csproj.GenerateResource.Cache
+E:\GitHub\Visual_Studio_Study\TCP_S\TCP_S\bin\Debug\TCP_S.exe.config
+E:\GitHub\Visual_Studio_Study\TCP_S\TCP_S\obj\Debug\TCP_S.exe
+E:\GitHub\Visual_Studio_Study\TCP_S\TCP_S\obj\Debug\TCP_S.pdb
+E:\GitHub\Visual_Studio_Study\TCP_S\TCP_S\bin\Debug\TCP_S.exe
+E:\GitHub\Visual_Studio_Study\TCP_S\TCP_S\bin\Debug\TCP_S.pdb
+E:\GitHub\Visual_Studio_Study\TCP_S\TCP_S\bin\Debug\Reader.dll
+E:\GitHub\Visual_Studio_Study\TCP_S\TCP_S\obj\Debug\TCP_S.csprojResolveAssemblyReference.cache
+E:\GitHub\Visual_Studio_Study\TCP_S\TCP_S\obj\Debug\TCP_SC.Server.resources
+E:\GitHub\Visual_Studio_Study\TCP_S\TCP_S\obj\Debug\TCP_S.Properties.Resources.resources
+E:\GitHub\Visual_Studio_Study\TCP_S\TCP_S\obj\Debug\TCP_S.csproj.GenerateResource.Cache
