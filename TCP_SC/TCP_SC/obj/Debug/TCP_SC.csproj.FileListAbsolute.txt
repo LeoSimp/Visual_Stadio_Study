@@ -6,3 +6,11 @@ C:\Users\Leo\Documents\Visual Studio 2013\Projects\TCPSend\TCP_SC\obj\Debug\TCP_
 C:\Users\Leo\Documents\Visual Studio 2013\Projects\TCPSend\TCP_SC\obj\Debug\TCP_SC.csproj.GenerateResource.Cache
 C:\Users\Leo\Documents\Visual Studio 2013\Projects\TCPSend\TCP_SC\obj\Debug\TCP_SC.exe
 C:\Users\Leo\Documents\Visual Studio 2013\Projects\TCPSend\TCP_SC\obj\Debug\TCP_SC.pdb
+E:\GitHub\Visual_Studio_Study\TCP_SC\TCP_SC\obj\Debug\TCP_SC.exe
+E:\GitHub\Visual_Studio_Study\TCP_SC\TCP_SC\obj\Debug\TCP_SC.pdb
+E:\GitHub\Visual_Studio_Study\TCP_SC\TCP_SC\bin\Debug\TCP_SC.exe
+E:\GitHub\Visual_Studio_Study\TCP_SC\TCP_SC\bin\Debug\TCP_SC.pdb
+E:\GitHub\Visual_Studio_Study\TCP_SC\TCP_SC\obj\Debug\TCP_SC.csprojResolveAssemblyReference.cache
+E:\GitHub\Visual_Studio_Study\TCP_SC\TCP_SC\obj\Debug\TCP_SC.Form1.resources
+E:\GitHub\Visual_Studio_Study\TCP_SC\TCP_SC\obj\Debug\TCP_SC.Properties.Resources.resources
+E:\GitHub\Visual_Studio_Study\TCP_SC\TCP_SC\obj\Debug\TCP_SC.csproj.GenerateResource.Cache

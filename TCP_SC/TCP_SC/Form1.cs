@@ -11,6 +11,8 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 //已测试单独开启server模式和单独开启客户端模式都OK，同时开启也都OK，但是同时开启时不能用同一个端口
+//作为客户端时，由于发包后自动断开，因此，无法同时接收服务端数据，即单项通信，作为服务端时双向通信
+//还有优化的空间
 
 namespace TCP_SC
 {
@@ -118,8 +120,8 @@ namespace TCP_SC
                 {
                     ns.WriteByte(contentBytes[i]);
                 }
-                ns.Close();
-                tcpClient.Close();
+                //ns.Close();
+                //tcpClient.Close();
                 richTextBox2.Text = "";
             }
             catch (SocketException e)
