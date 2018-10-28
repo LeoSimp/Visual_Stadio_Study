@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 //需要添加 Reader.dll 作为引用， Reader.dll 来源于网络https://blog.csdn.net/HorseRoll/article/details/80491460
@@ -100,6 +101,19 @@ public partial class Server : Form
 
         }
         return ipa_return;
+    }
+
+    private void Server_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        DialogResult r1 = MessageBox.Show("是否要关闭此窗口：" + this.Text, "YesNo", MessageBoxButtons.YesNo);
+        if (r1 == DialogResult.Yes)
+        {
+            e.Cancel = false;
+        }
+        else
+        {
+            e.Cancel = true;
+        }
     }
 }
 }

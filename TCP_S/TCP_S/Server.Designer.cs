@@ -122,6 +122,7 @@
             this.Controls.Add(this.btnopenserver);
             this.Name = "Server";
             this.Text = "服务端";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Server_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
