@@ -1,0 +1,19 @@
+E:\visual studio 2013\Projects\TCP_S_Plus\TCP_S_Plus\bin\Debug\TCP_S.exe.config
+E:\visual studio 2013\Projects\TCP_S_Plus\TCP_S_Plus\obj\Debug\TCP_S.exe
+E:\visual studio 2013\Projects\TCP_S_Plus\TCP_S_Plus\obj\Debug\TCP_S.pdb
+E:\visual studio 2013\Projects\TCP_S_Plus\TCP_S_Plus\bin\Debug\TCP_S.exe
+E:\visual studio 2013\Projects\TCP_S_Plus\TCP_S_Plus\bin\Debug\TCP_S.pdb
+E:\visual studio 2013\Projects\TCP_S_Plus\TCP_S_Plus\bin\Debug\Reader.dll
+E:\visual studio 2013\Projects\TCP_S_Plus\TCP_S_Plus\obj\Debug\TCP_S_Plus.csprojResolveAssemblyReference.cache
+E:\visual studio 2013\Projects\TCP_S_Plus\TCP_S_Plus\obj\Debug\TCP_SC.Server.resources
+E:\visual studio 2013\Projects\TCP_S_Plus\TCP_S_Plus\obj\Debug\TCP_S.Properties.Resources.resources
+E:\visual studio 2013\Projects\TCP_S_Plus\TCP_S_Plus\obj\Debug\TCP_S_Plus.csproj.GenerateResource.Cache
+E:\GitHub\Visual_Studio_Study\TCP_S_Plus\TCP_S_Plus\bin\Debug\TCP_S_Plus.exe.config
+E:\GitHub\Visual_Studio_Study\TCP_S_Plus\TCP_S_Plus\bin\Debug\TCP_S_Plus.exe
+E:\GitHub\Visual_Studio_Study\TCP_S_Plus\TCP_S_Plus\bin\Debug\TCP_S_Plus.pdb
+E:\GitHub\Visual_Studio_Study\TCP_S_Plus\TCP_S_Plus\obj\Debug\TCP_S_Plus.csprojResolveAssemblyReference.cache
+E:\GitHub\Visual_Studio_Study\TCP_S_Plus\TCP_S_Plus\obj\Debug\TCP_SC.Server.resources
+E:\GitHub\Visual_Studio_Study\TCP_S_Plus\TCP_S_Plus\obj\Debug\TCP_S_Plus.Properties.Resources.resources
+E:\GitHub\Visual_Studio_Study\TCP_S_Plus\TCP_S_Plus\obj\Debug\TCP_S_Plus.csproj.GenerateResource.Cache
+E:\GitHub\Visual_Studio_Study\TCP_S_Plus\TCP_S_Plus\obj\Debug\TCP_S_Plus.exe
+E:\GitHub\Visual_Studio_Study\TCP_S_Plus\TCP_S_Plus\obj\Debug\TCP_S_Plus.pdb

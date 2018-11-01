@@ -1,0 +1,12 @@
+E:\visual studio 2013\Projects\TCP\TCP服务端和客户端\bin\Debug\TCP_SC.exe.config
+E:\visual studio 2013\Projects\TCP\TCP_SC\bin\Debug\TCP_SC.exe.config
+E:\visual studio 2013\Projects\TCP\TCP_SC\bin\Debug\TCP_SC.exe
+E:\visual studio 2013\Projects\TCP\TCP_SC\bin\Debug\TCP_SC.pdb
+E:\visual studio 2013\Projects\TCP\TCP_SC\bin\Debug\Reader.dll
+E:\visual studio 2013\Projects\TCP\TCP_SC\obj\Debug\TCP_SC.csprojResolveAssemblyReference.cache
+E:\visual studio 2013\Projects\TCP\TCP_SC\obj\Debug\TCP_SC.Client.resources
+E:\visual studio 2013\Projects\TCP\TCP_SC\obj\Debug\TCP_SC.Server.resources
+E:\visual studio 2013\Projects\TCP\TCP_SC\obj\Debug\TCP_SC.Properties.Resources.resources
+E:\visual studio 2013\Projects\TCP\TCP_SC\obj\Debug\TCP_SC.csproj.GenerateResource.Cache
+E:\visual studio 2013\Projects\TCP\TCP_SC\obj\Debug\TCP_SC.exe
+E:\visual studio 2013\Projects\TCP\TCP_SC\obj\Debug\TCP_SC.pdb
