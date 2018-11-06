@@ -1,0 +1,8 @@
+E:\GitHub\Visual_Studio_Study\sBarcode_Demo\sBarcode\bin\Debug\sBarcode.exe
+E:\GitHub\Visual_Studio_Study\sBarcode_Demo\sBarcode\bin\Debug\sBarcode.pdb
+E:\GitHub\Visual_Studio_Study\sBarcode_Demo\sBarcode\obj\Debug\sBarcode.csprojResolveAssemblyReference.cache
+E:\GitHub\Visual_Studio_Study\sBarcode_Demo\sBarcode\obj\Debug\sBarcode.COMTR.resources
+E:\GitHub\Visual_Studio_Study\sBarcode_Demo\sBarcode\obj\Debug\sBarcode.Properties.Resources.resources
+E:\GitHub\Visual_Studio_Study\sBarcode_Demo\sBarcode\obj\Debug\sBarcode.csproj.GenerateResource.Cache
+E:\GitHub\Visual_Studio_Study\sBarcode_Demo\sBarcode\obj\Debug\sBarcode.exe
+E:\GitHub\Visual_Studio_Study\sBarcode_Demo\sBarcode\obj\Debug\sBarcode.pdb

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace sBarcode_Demo
+namespace sBarcode
 {
     static class Program
     {

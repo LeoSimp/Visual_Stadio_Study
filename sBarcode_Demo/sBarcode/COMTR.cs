@@ -9,9 +9,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
-//暂未验证
+//验证Scanner barcode pass
 
-namespace sBarcode_Demo
+namespace sBarcode
 {
     public partial class COMTR : Form
     {
@@ -24,6 +24,7 @@ namespace sBarcode_Demo
             drpParity.SelectedIndex = drpParity.Items.IndexOf("None");
             drpDataBits.SelectedIndex = drpDataBits.Items.IndexOf("8");
             drpStopBits.SelectedIndex = drpStopBits.Items.IndexOf("1");
+            _serialPort = new SerialPort();
         }
 
         private void COMOpen_Click(object sender, EventArgs e)
@@ -36,7 +37,6 @@ namespace sBarcode_Demo
             }
             else
             {
-                _serialPort = new SerialPort();
                 _serialPort.PortName = drpComList.Text;
                 _serialPort.BaudRate = int.Parse(drpBaudRate.Text);
                 _serialPort.Parity = (Parity)Enum.Parse(typeof(Parity), drpParity.Text);
@@ -62,6 +62,7 @@ namespace sBarcode_Demo
         {
             if( _serialPort.IsOpen) { _serialPort.Close(); }
             COMOpen.Enabled = true;
+
         }
 
         private void drpComList_Click(object sender, EventArgs e)
@@ -95,7 +96,7 @@ namespace sBarcode_Demo
                     WriteLog(rtb_ReciveMsg, tb_SendMsg.Text);
                     _serialPort.WriteLine(tb_SendMsg.Text);
                 }
-                WriteLog(rtb_ReciveMsg, ReadStrHex());
+                WriteLog(rtb_ReciveMsg, ReadStrHex()+ "\r\n");
             }
             else
             {
@@ -125,17 +126,30 @@ namespace sBarcode_Demo
             }
             while ((_serialPort.BytesToRead == 0) && (inti < 150));
             Thread.Sleep(500);
-            if (string.IsNullOrEmpty(_serialPort.ReadExisting())) { MessageBox.Show("读取等待超时，Time out=15S！", "Error", MessageBoxButtons.OK); return str; }
-            if (cb_R_HEX.Checked)
+            try
             {
-                byte[] buf = new byte[_serialPort.ReadBufferSize];
-                int buf_int=_serialPort.Read(buf, 0, _serialPort.ReadBufferSize);
-                str = buf_int.ToString();
+                string response = _serialPort.ReadLine();
+                if (cb_R_HEX.Checked)
+                {
+                    byte[] byteArray = System.Text.Encoding.ASCII.GetBytes(response);
+                    String RecvDataText = null;
+                    for (int i = 0; i < byteArray.Length - 1; i++)
+                    {
+                        RecvDataText += (byteArray[i].ToString("X2") + " ");
+                    }
+                    str = RecvDataText;
+                }
+                else
+                {
+                    str = response;
+                }
             }
-            else
+            catch (TimeoutException)
             {
-                str = _serialPort.ReadLine();
+                MessageBox.Show("读取等待超时，Time out=15S！", "Error", MessageBoxButtons.OK);
+                return str;
             }
+            
             return str;
         }
         #region 利用委托解决跨线程调用问题方法(WriteLog)

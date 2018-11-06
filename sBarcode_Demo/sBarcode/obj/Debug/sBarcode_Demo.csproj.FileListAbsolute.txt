@@ -6,3 +6,11 @@ E:\Project\Soft_D_Tool\ScanBarcode\sBarcode_Demo\sBarcode_Demo\obj\Debug\sBarcod
 E:\Project\Soft_D_Tool\ScanBarcode\sBarcode_Demo\sBarcode_Demo\obj\Debug\sBarcode_Demo.exe
 E:\Project\Soft_D_Tool\ScanBarcode\sBarcode_Demo\sBarcode_Demo\obj\Debug\sBarcode_Demo.pdb
 E:\Project\Soft_D_Tool\ScanBarcode\sBarcode_Demo\sBarcode_Demo\obj\Debug\sBarcode_Demo.COMTR.resources
+E:\GitHub\Visual_Studio_Study\sBarcode_Demo\sBarcode_Demo\obj\Debug\sBarcode_Demo.exe
+E:\GitHub\Visual_Studio_Study\sBarcode_Demo\sBarcode_Demo\obj\Debug\sBarcode_Demo.pdb
+E:\GitHub\Visual_Studio_Study\sBarcode_Demo\sBarcode_Demo\bin\Debug\sBarcode_Demo.exe
+E:\GitHub\Visual_Studio_Study\sBarcode_Demo\sBarcode_Demo\bin\Debug\sBarcode_Demo.pdb
+E:\GitHub\Visual_Studio_Study\sBarcode_Demo\sBarcode_Demo\obj\Debug\sBarcode_Demo.csprojResolveAssemblyReference.cache
+E:\GitHub\Visual_Studio_Study\sBarcode_Demo\sBarcode_Demo\obj\Debug\sBarcode_Demo.COMTR.resources
+E:\GitHub\Visual_Studio_Study\sBarcode_Demo\sBarcode_Demo\obj\Debug\sBarcode_Demo.Properties.Resources.resources
+E:\GitHub\Visual_Studio_Study\sBarcode_Demo\sBarcode_Demo\obj\Debug\sBarcode_Demo.csproj.GenerateResource.Cache

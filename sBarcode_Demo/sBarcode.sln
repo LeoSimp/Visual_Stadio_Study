@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sBarcode_Demo", "sBarcode_Demo\sBarcode_Demo.csproj", "{23073486-E162-4C3D-BE13-258C8CC1B533}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sBarcode", "sBarcode\sBarcode.csproj", "{23073486-E162-4C3D-BE13-258C8CC1B533}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

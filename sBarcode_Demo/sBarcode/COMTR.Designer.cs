@@ -1,4 +1,4 @@
-﻿namespace sBarcode_Demo
+﻿namespace sBarcode
 {
     partial class COMTR
     {
@@ -186,9 +186,9 @@
             // 
             // rtb_ReciveMsg
             // 
-            this.rtb_ReciveMsg.Location = new System.Drawing.Point(289, 12);
+            this.rtb_ReciveMsg.Location = new System.Drawing.Point(194, 38);
             this.rtb_ReciveMsg.Name = "rtb_ReciveMsg";
-            this.rtb_ReciveMsg.Size = new System.Drawing.Size(267, 174);
+            this.rtb_ReciveMsg.Size = new System.Drawing.Size(364, 148);
             this.rtb_ReciveMsg.TabIndex = 56;
             this.rtb_ReciveMsg.Text = "";
             // 
