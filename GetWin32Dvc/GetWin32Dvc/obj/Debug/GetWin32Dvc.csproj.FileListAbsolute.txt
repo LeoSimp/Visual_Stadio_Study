@@ -1,0 +1,5 @@
+d:\userdata\ks010901\documents\visual studio 2013\Projects\GetWin32Dvc\GetWin32Dvc\bin\Debug\GetWin32Dvc.exe
+d:\userdata\ks010901\documents\visual studio 2013\Projects\GetWin32Dvc\GetWin32Dvc\bin\Debug\GetWin32Dvc.pdb
+d:\userdata\ks010901\documents\visual studio 2013\Projects\GetWin32Dvc\GetWin32Dvc\obj\Debug\GetWin32Dvc.exe
+d:\userdata\ks010901\documents\visual studio 2013\Projects\GetWin32Dvc\GetWin32Dvc\obj\Debug\GetWin32Dvc.pdb
+d:\userdata\ks010901\documents\visual studio 2013\Projects\GetWin32Dvc\GetWin32Dvc\obj\Debug\GetWin32Dvc.csprojResolveAssemblyReference.cache

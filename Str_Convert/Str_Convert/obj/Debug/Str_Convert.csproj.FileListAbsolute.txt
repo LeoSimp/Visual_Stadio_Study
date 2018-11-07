@@ -1,0 +1,6 @@
+C:\Users\Leo\Documents\Visual Studio 2013\Projects\Str_Convert\Str_Convert\bin\Debug\Str_Convert.exe.config
+C:\Users\Leo\Documents\Visual Studio 2013\Projects\Str_Convert\Str_Convert\bin\Debug\Str_Convert.exe
+C:\Users\Leo\Documents\Visual Studio 2013\Projects\Str_Convert\Str_Convert\bin\Debug\Str_Convert.pdb
+C:\Users\Leo\Documents\Visual Studio 2013\Projects\Str_Convert\Str_Convert\obj\Debug\Str_Convert.csprojResolveAssemblyReference.cache
+C:\Users\Leo\Documents\Visual Studio 2013\Projects\Str_Convert\Str_Convert\obj\Debug\Str_Convert.exe
+C:\Users\Leo\Documents\Visual Studio 2013\Projects\Str_Convert\Str_Convert\obj\Debug\Str_Convert.pdb
