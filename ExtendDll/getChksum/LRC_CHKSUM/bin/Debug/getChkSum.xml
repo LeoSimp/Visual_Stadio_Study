@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>getChkSum</name>
+    </assembly>
+    <members>
+        <member name="T:getChkSum.LRC_ChkSum">
+              <summary> 
+              用于被外部函数引用的类 
+              主要包含LRC()方法，请参考注释
+              </summary> 
+        </member>
+        <member name="M:getChkSum.LRC_ChkSum.LRC(System.String)">
+              <summary> 获取LCR CheckSum    
+              </summary> 
+              <param name="Data">表示要处理的字符串</param>
+              <returns>返回CheckSum值</returns>
+        </member>
+        <member name="M:getChkSum.LRC_ChkSum.HexStringToByteArray(System.String)">
+              <summary> 将HEX字符串转为Byte数组   
+              </summary> 
+              <param name="s">表示要处理的字符串</param> 
+              <returns> </returns>
+        </member>
+    </members>
+</doc>
