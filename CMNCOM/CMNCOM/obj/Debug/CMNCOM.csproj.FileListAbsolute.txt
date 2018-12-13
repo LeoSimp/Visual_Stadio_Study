@@ -1,0 +1,11 @@
+D:\visual studio 2015\Projects\CMNCOM\CMNCOM\bin\Debug\CMNCOM.pdb
+D:\visual studio 2015\Projects\CMNCOM\CMNCOM\obj\Debug\CMNCOM.csprojResolveAssemblyReference.cache
+D:\visual studio 2015\Projects\CMNCOM\CMNCOM\obj\Debug\CMNCOM.Properties.Resources.resources
+D:\visual studio 2015\Projects\CMNCOM\CMNCOM\obj\Debug\CMNCOM.csproj.GenerateResource.Cache
+D:\visual studio 2015\Projects\CMNCOM\CMNCOM\obj\Debug\CMNCOM.pdb
+D:\visual studio 2015\Projects\CMNCOM\CMNCOM\obj\Debug\CMNCOM.UserControl_UI.resources
+D:\visual studio 2015\Projects\CMNCOM\CMNCOM\obj\Debug\CMNCOM.FormDiag.resources
+D:\visual studio 2015\Projects\CMNCOM\CMNCOM\obj\Debug\CMNCOM.SmplUsngForm.resources
+D:\visual studio 2015\Projects\CMNCOM\CMNCOM\bin\Debug\CMNCOM.XML
+D:\visual studio 2015\Projects\CMNCOM\CMNCOM\bin\Debug\CMNCOM.dll
+D:\visual studio 2015\Projects\CMNCOM\CMNCOM\obj\Debug\CMNCOM.dll

@@ -14,3 +14,5 @@ D:\GitHub\Visual_Studio_Study\sBarcode\sBarcode\obj\Debug\sBarcode.csprojResolve
 D:\GitHub\Visual_Studio_Study\sBarcode\sBarcode\obj\Debug\sBarcode.COMTR.resources
 D:\GitHub\Visual_Studio_Study\sBarcode\sBarcode\obj\Debug\sBarcode.Properties.Resources.resources
 D:\GitHub\Visual_Studio_Study\sBarcode\sBarcode\obj\Debug\sBarcode.csproj.GenerateResource.Cache
+D:\visual studio 2015\Projects\CMNCOM\sBarcode\obj\Debug\sBarcode.exe
+D:\visual studio 2015\Projects\CMNCOM\sBarcode\obj\Debug\sBarcode.pdb
