@@ -28,13 +28,35 @@ namespace CMNCOM
         /// 程序集名字+后缀
         /// </summary>
         public string MoudleConnString_Ext = Path.GetFileName(Assembly.GetExecutingAssembly().Location);
-        
+
         /// <summary>
-        /// 初始化
+        /// 初始化,指定DeviceName.Text，只在AddUsrControl中指定
+        /// </summary>
+        public UserControl_UI(string devName)
+        {
+            InitializeComponent();
+            InitializeComponentAgain();
+            DeviceName.Text = devName;
+            User_Load(false);
+        }
+
+        /// <summary>
+        /// 初始化，不指定DeviceName.Text
         /// </summary>
         public UserControl_UI()
         {
             InitializeComponent();
+            InitializeComponentAgain();
+            User_Load(false);
+        }
+
+        private void InitializeComponentAgain()
+        {
+            Assembly asm = Assembly.GetExecutingAssembly();
+            //AssemblyDescriptionAttribute asmdes = (AssemblyDescriptionAttribute)Attribute.GetCustomAttribute(asm, typeof(AssemblyDescriptionAttribute));
+            //AssemblyCompanyAttribute asmcpn = (AssemblyCompanyAttribute)Attribute.GetCustomAttribute(asm, typeof(AssemblyCompanyAttribute));
+            AssemblyFileVersionAttribute asmfver= (AssemblyFileVersionAttribute)Attribute.GetCustomAttribute(asm, typeof(AssemblyFileVersionAttribute));
+            UC_Tittle.Text = MoudleConnString + " Ver " + asmfver.Version;
             this.drpBaudRate.Items.AddRange(new object[] {
             "300",
             "600",
@@ -61,32 +83,6 @@ namespace CMNCOM
             this.drpStopBits.Items.AddRange(new object[] {
             "1",
             "2"});
-            drpBaudRate.SelectedIndex = drpBaudRate.Items.IndexOf("115200");
-            drpParity.SelectedIndex = drpParity.Items.IndexOf("None");
-            drpDataBits.SelectedIndex = drpDataBits.Items.IndexOf("8");
-            drpStopBits.SelectedIndex = drpStopBits.Items.IndexOf("1");
-            drpComList.Items.AddRange(System.IO.Ports.SerialPort.GetPortNames());
-
-           
-            drpComList.Items.AddRange(SerialPort.GetPortNames());
-            if (drpComList.Items.Count > 0)
-            {
-                drpComList.SelectedIndex = 0;
-            }
-            //User_Load();
-        }
-
-       
-        private void SelectOne(ComboBox cmb, string str)
-        {
-            for (int j = 0; j < cmb.Items.Count; j++)
-            {
-                if (cmb.Items[j].ToString() == str)
-                {
-                    cmb.SelectedIndex = j;
-                    return;
-                }
-            }
         }
 
         private void CheckDeviceLoop()
@@ -124,15 +120,15 @@ namespace CMNCOM
         }
 
         /// <summary>
-        /// 加载配置文件并初始化及打开COM,只在EMoudle中被调用
+        /// 加载配置文件并初始化及打开COM,只在EMoudle中被调用打开COM
         /// </summary>
-        internal void User_Load()
+        internal void User_Load(bool openCom)
         {
             try
             {
                 string path = System.Windows.Forms.Application.StartupPath + @"\MoudleSettingFiles\";
                 tools.pcheck(path);
-                path += MoudleConnString + ".mset";
+                path += MoudleConnString + "_" + DeviceName.Text + ".mset";
 
                 if (File.Exists(path))
                 {
@@ -146,24 +142,15 @@ namespace CMNCOM
                         ComDevice.userStopBits = sr.ReadLine();                                           
                     }
                 }
-                else
-                {
-                    ComDevice.DeviceDiscription = "NewScanner";
-                    ComDevice.UserPortName = "COM1";
-                    ComDevice.userBaudRate = "9600";
-                    ComDevice.userParity = "None";
-                    ComDevice.userDataBits = "8";
-                    ComDevice.userStopBits = "1";
-                   
-                }
                 //~~~~~~~~~~
-                this.DeviceName.Text = ComDevice.DeviceDiscription;
+                if (!string.IsNullOrEmpty(ComDevice.DeviceDiscription)) this.DeviceName.Text = ComDevice.DeviceDiscription;
                 SelectOne(drpComList, ComDevice.UserPortName);
                 SelectOne(drpBaudRate, ComDevice.userBaudRate);
                 SelectOne(drpParity, ComDevice.userParity);
                 SelectOne(drpDataBits, ComDevice.userDataBits);
                 SelectOne(drpStopBits, ComDevice.userStopBits);
-                ComDevice.Open(); 
+                ComDevice.DtrEnable = true;
+                if (openCom) ComDevice.Open(); 
                
             }            
             catch (Exception ex)
@@ -176,7 +163,20 @@ namespace CMNCOM
             });
             t2.IsBackground = true;
             t2.Start();
-        } 
+        }
+
+        private void SelectOne(ComboBox cmb, string str)
+        {
+            for (int j = 0; j < cmb.Items.Count; j++)
+            {
+                if (cmb.Items[j].ToString() == str)
+                {
+                    cmb.SelectedIndex = j;
+                    cmb.Update();
+                    return;
+                }
+            }
+        }
 
         /// <summary>
         /// 保存配置按钮，一次保存下次自动加载
@@ -196,7 +196,7 @@ namespace CMNCOM
                 catch { }
                 string path = System.Windows.Forms.Application.StartupPath + @"\MoudleSettingFiles\";
                 tools.pcheck(path);
-                path += MoudleConnString + ".mset";
+                path += MoudleConnString + "_" + DeviceName.Text + ".mset";
                 using (StreamWriter sr = new StreamWriter(path, false, System.Text.Encoding.GetEncoding("GB2312")))
                 {
                     string rst = "";
@@ -375,29 +375,5 @@ namespace CMNCOM
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="hex"></param>
-        /// <returns></returns>
-        public static byte[] hexStringToByte(String hex)
-        {
-            hex = hex.ToUpper();
-            int len = (hex.Length / 2);
-            byte[] result = new byte[len];
-            char[] achar = hex.ToCharArray();
-            for (int i = 0; i < len; i++)
-            {
-                int pos = i * 2;
-                result[i] = (byte)(toByte(achar[pos]) << 4 | toByte(achar[pos + 1]));
-            }
-            return result;
-        }
-
-        private static int toByte(char c)
-        {
-            byte b = (byte)"0123456789ABCDEF".IndexOf(c);
-            return b;
-        }
     }
 }

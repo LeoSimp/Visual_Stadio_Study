@@ -1,7 +1,6 @@
-H,16540D,Trigger
-H,16550D,Stop
-A,Reserved,Reserved
-A,,Send
-A,,Send
-A,,Send
-A,,Send
+PSP-603
+COM7
+2400
+None
+8
+1

@@ -32,7 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.drpComList = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.UC_Tittle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.drpBaudRate = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -89,15 +89,15 @@
             this.drpComList.Size = new System.Drawing.Size(132, 23);
             this.drpComList.TabIndex = 61;
             // 
-            // label2
+            // UC_Tittle
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 25);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 15);
-            this.label2.TabIndex = 59;
-            this.label2.Text = "CommonCOM(V1.00)";
+            this.UC_Tittle.AutoSize = true;
+            this.UC_Tittle.Location = new System.Drawing.Point(16, 25);
+            this.UC_Tittle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.UC_Tittle.Name = "UC_Tittle";
+            this.UC_Tittle.Size = new System.Drawing.Size(135, 15);
+            this.UC_Tittle.TabIndex = 59;
+            this.UC_Tittle.Text = "CommonCOM(V1.00)";
             // 
             // label1
             // 
@@ -205,9 +205,9 @@
             this.DeviceName.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DeviceName.Location = new System.Drawing.Point(79, 125);
             this.DeviceName.Name = "DeviceName";
+            this.DeviceName.ReadOnly = true;
             this.DeviceName.Size = new System.Drawing.Size(132, 25);
             this.DeviceName.TabIndex = 75;
-            this.DeviceName.Text = "PSP-603";
             this.DeviceName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.DeviceName.WordWrap = false;
             // 
@@ -230,7 +230,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.drpComList);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.UC_Tittle);
             this.Name = "UserControl_UI";
             this.Size = new System.Drawing.Size(237, 475);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -248,7 +248,7 @@
         /// 申明共用，方便跨类调用
         /// </summary>
         public System.Windows.Forms.ComboBox drpComList;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label UC_Tittle;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         /// <summary>

@@ -49,13 +49,35 @@
         <member name="M:CMNCOM.EMoudle.SendMsg(System.Boolean,System.String)">
             <summary>
             Send Message via COM
+            Send完直接关闭COM，适用于无需接收数据返回的情况，比如Scanner Stop
             </summary>
             <param name="hexBool">代表发送的字符串是否为Hex</param>
              <param name="Msg">代表发送的字符串</param>
         </member>
+        <member name="M:CMNCOM.EMoudle.SendReciveMsg(System.Boolean,System.String,System.Boolean)">
+            <summary>
+            Send Message and recieve via COM
+            适用于不需要判断接收数据超时提醒的情况，最多只等待1S，且超时不提醒
+            </summary>
+            <param name="Send_hexBool"></param>
+            <param name="Msg"></param>
+            <param name="Recive_hexBool"></param>
+        </member>
+        <member name="M:CMNCOM.EMoudle.SendReciveMsg(System.Boolean,System.String,System.Boolean,System.Int32)">
+            <summary>
+            Send Message and recieve via COM
+            适用于需要判断接收数据超时提醒的情况
+            </summary>
+            <param name="Send_hexBool"></param>
+            <param name="Msg"></param>
+            <param name="Recive_hexBool"></param>
+            <param name="RTimeOut"></param>
+            <returns></returns>
+        </member>
         <member name="M:CMNCOM.EMoudle.RecieveMsg(System.Boolean,System.Int32)">
             <summary>
             Recieve Message via COM，超时无数据返回报错提醒
+            收取数据时不宜频繁打开关闭COM，容易造成收到的数据不完整
             </summary>
             <param name="hexBool">代表发送的字符串是否为Hex</param>
             <param name="timeout">代表接收串口数据的最大超时时间(S)</param>
@@ -64,6 +86,7 @@
         <member name="M:CMNCOM.EMoudle.RecieveMsg(System.Boolean)">
             <summary>
             Recieve Message via COM,数据包个数为0时，最多只等待1S，且超时不提醒，
+            收取数据时不宜频繁打开关闭COM，容易造成收到的数据不完整
             </summary>
             <param name="hexBool">代表发送的字符串是否为Hex</param>
             <returns>返回字符串类型的接收到的数据</returns>
@@ -85,7 +108,7 @@
         </member>
         <member name="T:CMNCOM.SmplUsngForm">
             <summary>
-            This is a Form of Sample using 
+            This is a Form of Sample using this dll
             </summary>
         </member>
         <member name="M:CMNCOM.SmplUsngForm.#ctor">
@@ -93,11 +116,12 @@
             初始化
             </summary>
         </member>
-        <member name="M:CMNCOM.SmplUsngForm.AddUsrControl(System.Windows.Forms.Panel)">
+        <member name="M:CMNCOM.SmplUsngForm.AddUsrControl(System.Windows.Forms.Panel,System.String)">
             <summary>
             Add UserControl into the panel of the sample form
             </summary>
             <param name="p">is a pannel</param>
+            <param name="devName">is the UserControl_UI.DeviceName.Text</param>
         </member>
         <member name="F:CMNCOM.SmplUsngForm.components">
             <summary>
@@ -137,14 +161,19 @@
             程序集名字+后缀
             </summary>
         </member>
-        <member name="M:CMNCOM.UserControl_UI.#ctor">
+        <member name="M:CMNCOM.UserControl_UI.#ctor(System.String)">
             <summary>
-            初始化
+            初始化,指定DeviceName.Text，只在AddUsrControl中指定
             </summary>
         </member>
-        <member name="M:CMNCOM.UserControl_UI.User_Load">
+        <member name="M:CMNCOM.UserControl_UI.#ctor">
             <summary>
-            加载配置文件并初始化及打开COM,只在EMoudle中被调用
+            初始化，不指定DeviceName.Text
+            </summary>
+        </member>
+        <member name="M:CMNCOM.UserControl_UI.User_Load(System.Boolean)">
+            <summary>
+            加载配置文件并初始化及打开COM,只在EMoudle中被调用打开COM
             </summary>
         </member>
         <member name="M:CMNCOM.UserControl_UI.button1_Click(System.Object,System.EventArgs)">
@@ -247,13 +276,6 @@
             <summary>
             
             </summary>
-        </member>
-        <member name="M:CMNCOM.UserSerialPort.hexStringToByte(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="hex"></param>
-            <returns></returns>
         </member>
         <member name="T:CMNCOM.Properties.Resources">
             <summary>

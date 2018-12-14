@@ -22,11 +22,12 @@ namespace CMNCOM
         public EMoudle()
         {
             DeviceUI = new UserControl_UI();
-            DeviceUI.User_Load();
+            DeviceUI.User_Load(true);
         }
 
         /// <summary>
         /// Send Message via COM
+        /// Send完直接关闭COM，适用于无需接收数据返回的情况，比如Scanner Stop
         /// </summary>
         /// <param name="hexBool">代表发送的字符串是否为Hex</param>
         ///  <param name="Msg">代表发送的字符串</param>
@@ -58,16 +59,92 @@ namespace CMNCOM
         }
 
         /// <summary>
+        /// Send Message and recieve via COM
+        /// 适用于不需要判断接收数据超时提醒的情况，最多只等待1S，且超时不提醒
+        /// </summary>
+        /// <param name="Send_hexBool"></param>
+        /// <param name="Msg"></param>
+        /// <param name="Recive_hexBool"></param>
+        public string SendReciveMsg(bool Send_hexBool, string Msg,bool Recive_hexBool)
+        {
+            DeviceClose();
+            Thread.Sleep(10);
+            DeviceOpen();
+            if (DeviceUI.ComDevice.IsOpen)
+            {
+                //MessageBox.Show("Pause", "Pause", MessageBoxButtons.OK);
+                if (Send_hexBool)
+                {
+                    if (Msg.Length % 2 != 0) { MessageBox.Show("16进制必须为偶数位，请检查！", "Error", MessageBoxButtons.OK); return null; }
+                    byte[] buf = HexStringToByteArray(Msg);
+                    Console.WriteLine(BitConverter.ToString(buf));
+                    DeviceUI.ComDevice.Write(buf, 0, buf.Length);
+                }
+                else
+                {
+                    DeviceUI.ComDevice.WriteLine(Msg);
+                }
+            }
+            else
+            {
+                MessageBox.Show("COM处于断开状态，请检查！", DeviceUI.MoudleConnString_Ext + " - " + DeviceUI.ComDevice.DeviceDiscription);
+                return null;
+            }
+            string str=RecieveMsg(Recive_hexBool);
+            
+            DeviceClose();
+            return str;
+        }
+
+        /// <summary>
+        /// Send Message and recieve via COM
+        /// 适用于需要判断接收数据超时提醒的情况
+        /// </summary>
+        /// <param name="Send_hexBool"></param>
+        /// <param name="Msg"></param>
+        /// <param name="Recive_hexBool"></param>
+        /// <param name="RTimeOut"></param>
+        /// <returns></returns>
+        public string SendReciveMsg(bool Send_hexBool, string Msg, bool Recive_hexBool,int RTimeOut)
+        {
+            DeviceClose();
+            Thread.Sleep(10);
+            DeviceOpen();
+            if (DeviceUI.ComDevice.IsOpen)
+            {
+                //MessageBox.Show("Pause", "Pause", MessageBoxButtons.OK);
+                if (Send_hexBool)
+                {
+                    if (Msg.Length % 2 != 0) { MessageBox.Show("16进制必须为偶数位，请检查！", "Error", MessageBoxButtons.OK); return null; }
+                    byte[] buf = HexStringToByteArray(Msg);
+                    Console.WriteLine(BitConverter.ToString(buf));
+                    DeviceUI.ComDevice.Write(buf, 0, buf.Length);
+                }
+                else
+                {
+                    DeviceUI.ComDevice.WriteLine(Msg);
+                }
+            }
+            else
+            {
+                MessageBox.Show("COM处于断开状态，请检查！", DeviceUI.MoudleConnString_Ext + " - " + DeviceUI.ComDevice.DeviceDiscription);
+                return null;
+            }
+            string str = RecieveMsg(Recive_hexBool,RTimeOut);
+
+            DeviceClose();
+            return str;
+        }
+
+        /// <summary>
         /// Recieve Message via COM，超时无数据返回报错提醒
+        /// 收取数据时不宜频繁打开关闭COM，容易造成收到的数据不完整
         /// </summary>
         /// <param name="hexBool">代表发送的字符串是否为Hex</param>
         /// <param name="timeout">代表接收串口数据的最大超时时间(S)</param>
         /// <returns>返回字符串类型的接收到的数据</returns>
         public string RecieveMsg(bool hexBool, int timeout)
         {
-            DeviceClose();
-            Thread.Sleep(10);
-            DeviceOpen();
             string str = null;
             int inti = 0;
             do
@@ -107,20 +184,17 @@ namespace CMNCOM
                 MessageBox.Show("读取数据包个数包个数不为0，但处理超时！", DeviceUI.MoudleConnString_Ext + " - " + DeviceUI.ComDevice.DeviceDiscription);
                 return str;
             }
-            DeviceClose();
             return str;
         }
 
         /// <summary>
         /// Recieve Message via COM,数据包个数为0时，最多只等待1S，且超时不提醒，
+        /// 收取数据时不宜频繁打开关闭COM，容易造成收到的数据不完整
         /// </summary>
         /// <param name="hexBool">代表发送的字符串是否为Hex</param>
         /// <returns>返回字符串类型的接收到的数据</returns>
         public string RecieveMsg(bool hexBool)
         {
-            DeviceClose();
-            Thread.Sleep(10);
-            DeviceOpen();
             string str = null;
             int inti = 0;
             do
@@ -160,7 +234,6 @@ namespace CMNCOM
                 MessageBox.Show("读取数据包个数包个数不为0，但处理超时！", DeviceUI.MoudleConnString_Ext + " - " + DeviceUI.ComDevice.DeviceDiscription);
                 return str;
             }
-            DeviceClose();
             return str;
         }
 

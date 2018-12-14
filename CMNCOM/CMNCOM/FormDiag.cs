@@ -37,7 +37,7 @@ namespace CMNCOM
             {
                 string path = System.Windows.Forms.Application.StartupPath + @"\MoudleSettingFiles\";
                 tools.pcheck(path);
-                path += EMoudleInstance.DeviceUI.MoudleConnString + "_" + EMoudleInstance.DeviceUI.DeviceName.Text + ".mset";
+                path += EMoudleInstance.DeviceUI.MoudleConnString + "_" + EMoudleInstance.DeviceUI.DeviceName.Text + ".cmdset";
 
                 if (File.Exists(path))
                 {
@@ -97,7 +97,7 @@ namespace CMNCOM
             {
                 string path = System.Windows.Forms.Application.StartupPath + @"\MoudleSettingFiles\";
                 tools.pcheck(path);
-                path += EMoudleInstance.DeviceUI.MoudleConnString + "_" + EMoudleInstance.DeviceUI.DeviceName.Text + ".mset";
+                path += EMoudleInstance.DeviceUI.MoudleConnString + "_" + EMoudleInstance.DeviceUI.DeviceName.Text + ".cmdset";
                 using (StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.GetEncoding("GB2312")))
                     {
                         string rst = "";
@@ -117,9 +117,25 @@ namespace CMNCOM
             }
         }
 
+
         private void SendMsg_Click1(object sender, EventArgs e)
         {
-            ButtonSend_Read(cb_T_HEX, tb_SendMsg);
+            ButtonSend(cb_T_HEX, tb_SendMsg,5);
+        }      
+
+        private void ButtonSend(CheckBox cb,TextBox tb)
+        {           
+            WriteLog(rtb_ReciveMsg, tb.Text);
+            rtb_ReciveMsg.Update();
+            string rst = EMoudleInstance.SendReciveMsg(cb.Checked, tb.Text, cb_R_HEX.Checked);
+            WriteLog(rtb_ReciveMsg, rst + "\r\n");
+        }
+        private void ButtonSend(CheckBox cb, TextBox tb,int TimeOut)
+        {
+            WriteLog(rtb_ReciveMsg, tb.Text);
+            rtb_ReciveMsg.Update();
+            string rst = EMoudleInstance.SendReciveMsg(cb.Checked, tb.Text, cb_R_HEX.Checked,TimeOut);
+            WriteLog(rtb_ReciveMsg, rst + "\r\n");
         }
 
 
@@ -142,23 +158,7 @@ namespace CMNCOM
 
         #endregion
 
-        private void ButtonSend(CheckBox cb,TextBox tb)
-        {
-            EMoudleInstance.SendMsg(cb.Checked, tb.Text);
-            WriteLog(rtb_ReciveMsg, tb.Text);
-            rtb_ReciveMsg.Update();
-            string rst = EMoudleInstance.RecieveMsg(cb_R_HEX.Checked);
-            WriteLog(rtb_ReciveMsg, rst + "\r\n");
-        }
-        private void ButtonSend_Read(CheckBox cb, TextBox tb)
-        {
-            EMoudleInstance.SendMsg(cb.Checked, tb.Text);
-            WriteLog(rtb_ReciveMsg, tb.Text);
-            rtb_ReciveMsg.Update();
-            string rst = EMoudleInstance.RecieveMsg(cb_R_HEX.Checked,5);
-            if (rst == null && tb.Text == "16540D") EMoudleInstance.SendMsg(true, "16550D");//关闭Scanner
-            WriteLog(rtb_ReciveMsg, rst + "\r\n");
-        }
+        #region"Button1-7 and TextBox1-7 事件"
         private void button1_Click(object sender, EventArgs e)
         {
             ButtonSend(checkBox1, textBox1);
@@ -234,5 +234,6 @@ namespace CMNCOM
         {
             ModifyBtnText(button7);
         }
+        #endregion
     }
 }
