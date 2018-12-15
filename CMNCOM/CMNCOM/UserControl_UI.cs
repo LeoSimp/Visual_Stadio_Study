@@ -30,23 +30,13 @@ namespace CMNCOM
         public string MoudleConnString_Ext = Path.GetFileName(Assembly.GetExecutingAssembly().Location);
 
         /// <summary>
-        /// 初始化,指定DeviceName.Text，只在AddUsrControl中指定
+        /// 初始化,必须指定DeviceName.Text
         /// </summary>
         public UserControl_UI(string devName)
         {
             InitializeComponent();
             InitializeComponentAgain();
             DeviceName.Text = devName;
-            User_Load(false);
-        }
-
-        /// <summary>
-        /// 初始化，不指定DeviceName.Text
-        /// </summary>
-        public UserControl_UI()
-        {
-            InitializeComponent();
-            InitializeComponentAgain();
             User_Load(false);
         }
 
@@ -223,7 +213,7 @@ namespace CMNCOM
             try
             {
                 if (formDiag != null) formDiag.Dispose();
-                formDiag = new FormDiag();
+                formDiag = new FormDiag(DeviceName.Text);
                 //formDiag.StartPosition = FormStartPosition.Manual;
                 //先定义窗口名字parentForm，然后[parentForm.Text
                 //int m_r = Application.OpenForms[this.Parent.Text].Right;               

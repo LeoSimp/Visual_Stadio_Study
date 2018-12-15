@@ -17,11 +17,11 @@ namespace CMNCOM
         /// </summary>
         public UserControl_UI DeviceUI;
         /// <summary>
-        /// 初始化
+        /// 初始化，必须指定DeviceName.Text
         /// </summary>
-        public EMoudle()
+        public EMoudle(string devName)
         {
-            DeviceUI = new UserControl_UI();
+            DeviceUI = new UserControl_UI(devName);
             DeviceUI.User_Load(true);
         }
 

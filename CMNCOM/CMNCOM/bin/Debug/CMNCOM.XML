@@ -9,9 +9,9 @@
             用于有界面引用，相对EMoudle而言是半自动引用
             </summary>
         </member>
-        <member name="M:CMNCOM.FormDiag.#ctor">
+        <member name="M:CMNCOM.FormDiag.#ctor(System.String)">
             <summary>
-            初始化
+            初始化，必须指定DeviceName.Text
             </summary>
         </member>
         <member name="F:CMNCOM.FormDiag.components">
@@ -41,9 +41,9 @@
             声明DeviceUI为UserControl_UI
             </summary>
         </member>
-        <member name="M:CMNCOM.EMoudle.#ctor">
+        <member name="M:CMNCOM.EMoudle.#ctor(System.String)">
             <summary>
-            初始化
+            初始化，必须指定DeviceName.Text
             </summary>
         </member>
         <member name="M:CMNCOM.EMoudle.SendMsg(System.Boolean,System.String)">
@@ -163,12 +163,7 @@
         </member>
         <member name="M:CMNCOM.UserControl_UI.#ctor(System.String)">
             <summary>
-            初始化,指定DeviceName.Text，只在AddUsrControl中指定
-            </summary>
-        </member>
-        <member name="M:CMNCOM.UserControl_UI.#ctor">
-            <summary>
-            初始化，不指定DeviceName.Text
+            初始化,必须指定DeviceName.Text
             </summary>
         </member>
         <member name="M:CMNCOM.UserControl_UI.User_Load(System.Boolean)">

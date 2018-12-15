@@ -19,14 +19,15 @@ namespace CMNCOM
     /// 用于有界面引用，相对EMoudle而言是半自动引用
     /// </summary>
     public partial class FormDiag : Form
-    {        
-        internal EMoudle EMoudleInstance = new EMoudle();
+    {
+        internal EMoudle EMoudleInstance;
 
         /// <summary>
-        /// 初始化
+        /// 初始化，必须指定DeviceName.Text
         /// </summary>
-        public FormDiag()
+        public FormDiag(string devName)
         {
+            EMoudleInstance = new EMoudle(devName);
             InitializeComponent();
             Conf_Load();
         }
