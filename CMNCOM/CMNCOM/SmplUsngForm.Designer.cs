@@ -33,18 +33,19 @@
             // 
             // DevPanel
             // 
-            this.DevPanel.Location = new System.Drawing.Point(4, 0);
+            this.DevPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DevPanel.Location = new System.Drawing.Point(0, 0);
             this.DevPanel.Name = "DevPanel";
-            this.DevPanel.Size = new System.Drawing.Size(262, 493);
+            this.DevPanel.Size = new System.Drawing.Size(240, 409);
             this.DevPanel.TabIndex = 0;
             // 
-            // TestForm
+            // SmplUsngForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(264, 496);
+            this.ClientSize = new System.Drawing.Size(240, 409);
             this.Controls.Add(this.DevPanel);
-            this.Name = "TestForm";
+            this.Name = "SmplUsngForm";
             this.Text = "TestForm";
             this.ResumeLayout(false);
 

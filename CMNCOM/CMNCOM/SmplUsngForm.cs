@@ -33,6 +33,8 @@ namespace CMNCOM
         {
             UserControl_UI control = new UserControl_UI(devName); //;//实例化一个对象
             control.Dock = DockStyle.Fill;
+            control.BackColor = Color.White;
+            control.BorderStyle = BorderStyle.FixedSingle;
             p.Controls.Add(control);//向controls集合（Panel）增加一个控件时，它会立即出现在窗体上            
         }
 

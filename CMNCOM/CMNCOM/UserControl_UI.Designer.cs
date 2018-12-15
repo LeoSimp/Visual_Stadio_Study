@@ -49,7 +49,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(19, 384);
+            this.button3.Location = new System.Drawing.Point(5, 289);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(199, 29);
@@ -60,7 +60,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(19, 420);
+            this.button1.Location = new System.Drawing.Point(5, 326);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(199, 29);
@@ -72,7 +72,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 169);
+            this.label3.Location = new System.Drawing.Point(7, 132);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 15);
@@ -83,7 +83,7 @@
             // 
             this.drpComList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.drpComList.FormattingEnabled = true;
-            this.drpComList.Location = new System.Drawing.Point(79, 166);
+            this.drpComList.Location = new System.Drawing.Point(70, 129);
             this.drpComList.Margin = new System.Windows.Forms.Padding(4);
             this.drpComList.Name = "drpComList";
             this.drpComList.Size = new System.Drawing.Size(132, 23);
@@ -92,17 +92,17 @@
             // UC_Tittle
             // 
             this.UC_Tittle.AutoSize = true;
-            this.UC_Tittle.Location = new System.Drawing.Point(16, 25);
+            this.UC_Tittle.Location = new System.Drawing.Point(7, 5);
             this.UC_Tittle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UC_Tittle.Name = "UC_Tittle";
-            this.UC_Tittle.Size = new System.Drawing.Size(135, 15);
+            this.UC_Tittle.Size = new System.Drawing.Size(79, 15);
             this.UC_Tittle.TabIndex = 59;
-            this.UC_Tittle.Text = "CommonCOM(V1.00)";
+            this.UC_Tittle.Text = "CommonCOM";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 204);
+            this.label1.Location = new System.Drawing.Point(7, 159);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 15);
@@ -113,7 +113,7 @@
             // 
             this.drpBaudRate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.drpBaudRate.FormattingEnabled = true;
-            this.drpBaudRate.Location = new System.Drawing.Point(79, 201);
+            this.drpBaudRate.Location = new System.Drawing.Point(70, 156);
             this.drpBaudRate.Margin = new System.Windows.Forms.Padding(4);
             this.drpBaudRate.Name = "drpBaudRate";
             this.drpBaudRate.Size = new System.Drawing.Size(132, 23);
@@ -122,7 +122,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 131);
+            this.label4.Location = new System.Drawing.Point(1, 101);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 15);
@@ -132,10 +132,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CMNCOM.Properties.Resources.OneSoft_Panel;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 44);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 31);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(209, 74);
+            this.pictureBox1.Size = new System.Drawing.Size(200, 58);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 64;
             this.pictureBox1.TabStop = false;
@@ -143,7 +143,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 276);
+            this.label5.Location = new System.Drawing.Point(7, 213);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 15);
@@ -154,7 +154,7 @@
             // 
             this.drpDataBits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.drpDataBits.FormattingEnabled = true;
-            this.drpDataBits.Location = new System.Drawing.Point(79, 273);
+            this.drpDataBits.Location = new System.Drawing.Point(70, 210);
             this.drpDataBits.Margin = new System.Windows.Forms.Padding(4);
             this.drpDataBits.Name = "drpDataBits";
             this.drpDataBits.Size = new System.Drawing.Size(132, 23);
@@ -163,7 +163,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 241);
+            this.label6.Location = new System.Drawing.Point(7, 186);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 15);
@@ -174,7 +174,7 @@
             // 
             this.drpParity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.drpParity.FormattingEnabled = true;
-            this.drpParity.Location = new System.Drawing.Point(79, 238);
+            this.drpParity.Location = new System.Drawing.Point(70, 183);
             this.drpParity.Margin = new System.Windows.Forms.Padding(4);
             this.drpParity.Name = "drpParity";
             this.drpParity.Size = new System.Drawing.Size(132, 23);
@@ -183,7 +183,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 311);
+            this.label7.Location = new System.Drawing.Point(7, 240);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 15);
@@ -194,7 +194,7 @@
             // 
             this.drpStopBits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.drpStopBits.FormattingEnabled = true;
-            this.drpStopBits.Location = new System.Drawing.Point(79, 308);
+            this.drpStopBits.Location = new System.Drawing.Point(70, 237);
             this.drpStopBits.Margin = new System.Windows.Forms.Padding(4);
             this.drpStopBits.Name = "drpStopBits";
             this.drpStopBits.Size = new System.Drawing.Size(132, 23);
@@ -203,7 +203,7 @@
             // DeviceName
             // 
             this.DeviceName.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DeviceName.Location = new System.Drawing.Point(79, 125);
+            this.DeviceName.Location = new System.Drawing.Point(70, 98);
             this.DeviceName.Name = "DeviceName";
             this.DeviceName.ReadOnly = true;
             this.DeviceName.Size = new System.Drawing.Size(132, 25);
@@ -215,6 +215,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.DeviceName);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.drpStopBits);
@@ -232,7 +233,7 @@
             this.Controls.Add(this.drpComList);
             this.Controls.Add(this.UC_Tittle);
             this.Name = "UserControl_UI";
-            this.Size = new System.Drawing.Size(237, 475);
+            this.Size = new System.Drawing.Size(207, 354);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
