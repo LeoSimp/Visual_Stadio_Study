@@ -45,6 +45,14 @@
             
             </summary>
         </member>
+        <member name="M:SpEyeCOM.UserControl_UI.CHKWINExist(System.String,System.IntPtr@)">
+            <summary>
+            
+            </summary>
+            <param name="WinTittle"></param>
+            <param name="handle">out param</param>
+            <returns></returns>
+        </member>
         <member name="M:SpEyeCOM.UserControl_UI.BarcodeRead">
             <summary>
             

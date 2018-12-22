@@ -11,6 +11,7 @@ using System.Reflection;
 using System.IO;
 using INIFileReadWrite;
 using System.Threading;
+using System.Diagnostics;
 
 namespace SpEyeCOM
 {
@@ -33,7 +34,7 @@ namespace SpEyeCOM
         private string EXEName, EXEPath, EXETittle, EXEConfigFullName;
 
         private static System.Diagnostics.Process p;
-        private bool HasExited = false;
+        //private bool HasExited = false;
 
         [DllImport("user32.dll")]
         static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
@@ -77,7 +78,7 @@ namespace SpEyeCOM
         private void p_Exited(object sender, EventArgs e)
         {
             Console.WriteLine(p.StartInfo.FileName + " has exited");
-            HasExited = true;
+            //HasExited = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -108,14 +109,15 @@ namespace SpEyeCOM
                 OperateIniFile.WriteIniData("setup", "bmpfile", EXEPath + "bmp", EXEConfigFullName);
                 OperateIniFile.WriteIniData("setup", "logfile", EXEPath + "log", EXEConfigFullName);
                 p.Start();
-                HasExited = false;
+                //HasExited = false;
             }
             else
             {
-                if (HasExited) //是否已经退出
+                IntPtr handle;
+                if (!CHKWINExist(EXETittle, out handle))
                 {
                     p.Start();
-                    HasExited = false;
+                    //HasExited = false;
                 }
             }
         }       
@@ -125,17 +127,29 @@ namespace SpEyeCOM
         /// </summary>
         public void CloseEXE()
         {
-            if (p != null)
+            IntPtr handle;
+            if (CHKWINExist(EXETittle, out handle))
             {
                 try
                 {
-                    p.CloseMainWindow();
-                    p.WaitForExit(5000);    //设置最多等待5秒（处理类似用于需要用户确定关闭的对话框未关闭的情况）
-                    p.Close();
-                }
-                catch { }
-              
+                    if (p != null)
+                    {
+                        p.CloseMainWindow();
+                        p.WaitForExit(5000);    //设置最多等待5秒（处理类似用于需要用户确定关闭的对话框未关闭的情况）
+                        p.Close();
+                    }
+                    else
+                    {
+                        Process[] myProcesses = System.Diagnostics.Process.GetProcesses();
+                        foreach (Process myProcess in myProcesses)
+                        {
+                            if (myProcess.ProcessName == EXEName.Substring(0, EXEName.Length - 4)) myProcess.Kill();//强制关闭该程序
+                        }
 
+                    }
+                    
+                }
+                catch { }             
             }
         }
 
@@ -144,8 +158,9 @@ namespace SpEyeCOM
         /// </summary>
         public void MiniSizeEXE()
         {
-            IntPtr handle = FindWindow(null, EXETittle);
-            if (handle == IntPtr.Zero)
+
+            IntPtr handle;
+            if (!CHKWINExist(EXETittle, out handle))
             {
                 MessageBox.Show("该窗口: " + EXETittle + " 不存在");
             }
@@ -155,6 +170,24 @@ namespace SpEyeCOM
             }
 
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="WinTittle"></param>
+        /// <param name="handle">out param</param>
+        /// <returns></returns>
+        public bool CHKWINExist(string WinTittle,out IntPtr handle)
+        {
+            handle = FindWindow(null, WinTittle);
+            if (handle == IntPtr.Zero)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
         /// <summary>
         /// 
@@ -162,6 +195,14 @@ namespace SpEyeCOM
         /// <returns></returns>
         public string BarcodeRead()
         {
+
+            string[] dirs = Directory.GetFiles(EXEPath + @"log\", "barcode_*.log");
+            foreach (string dir in dirs)
+            {
+                //Console.WriteLine(dir);
+                try { File.Delete(dir); } catch { }               
+            }
+
             CMNCOM.EMoudle EMoudleInstance = new CMNCOM.EMoudle("SpEye");
             return EMoudleInstance.SendReciveMsg(false, "0", false, 5);
         }
@@ -171,7 +212,9 @@ namespace SpEyeCOM
         /// <returns></returns>
         public string qBarcodeRead()
         {
-            if (HasExited)
+
+            IntPtr handle;
+            if (!CHKWINExist(EXETittle, out handle))
             {
                 OpenEXE();
                 Thread.Sleep(2000);//Sleep to wait for Camera Load

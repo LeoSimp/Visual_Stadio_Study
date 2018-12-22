@@ -43,5 +43,11 @@ namespace SpEyeCOM
             UserControl_UI control = new UserControl_UI();
             control.CloseEXE();
         }
+
+        private void SmplUsngForm_Load(object sender, EventArgs e)
+        {
+            UserControl_UI control = new UserControl_UI();
+            control.CloseEXE();
+        }
     }
 }
