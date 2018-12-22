@@ -134,7 +134,8 @@ namespace CMNCOM
                 }
                 //~~~~~~~~~~
                 if (!string.IsNullOrEmpty(ComDevice.DeviceDiscription)) this.DeviceName.Text = ComDevice.DeviceDiscription;
-                SelectOne(drpComList, ComDevice.UserPortName);
+                UpdateComList(drpComList, ComDevice.UserPortName);
+                //MessageBox.Show("Pause");
                 SelectOne(drpBaudRate, ComDevice.userBaudRate);
                 SelectOne(drpParity, ComDevice.userParity);
                 SelectOne(drpDataBits, ComDevice.userDataBits);
@@ -148,11 +149,6 @@ namespace CMNCOM
                 string DialogTittle = MoudleConnString_Ext + " - " + this.DeviceName.Text;
                 MessageBox.Show("User_Load初始化失败:" + ex.ToString(), DialogTittle);
             }
-            Thread t2 = new Thread(delegate () {
-                CheckDeviceLoop();
-            });
-            t2.IsBackground = true;
-            t2.Start();
         }
 
         private void SelectOne(ComboBox cmb, string str)
@@ -166,6 +162,15 @@ namespace CMNCOM
                     return;
                 }
             }
+        }
+
+        private void UpdateComList(ComboBox cmb, string str)
+        {
+            foreach (string s in SerialPort.GetPortNames())
+            {
+                cmb.Items.Add(s);               
+            }
+            SelectOne(cmb, str);
         }
 
         /// <summary>

@@ -31,31 +31,34 @@ namespace CMNCOM
         /// </summary>
         /// <param name="hexBool">代表发送的字符串是否为Hex</param>
         ///  <param name="Msg">代表发送的字符串</param>
-        public void SendMsg(bool hexBool, string Msg)
+        public bool SendMsg(bool hexBool, string Msg)
         {
-            DeviceClose();
-            Thread.Sleep(10);
-            DeviceOpen();
             if (DeviceUI.ComDevice.IsOpen)
             {
                 //MessageBox.Show("Pause", "Pause", MessageBoxButtons.OK);
                 if (hexBool)
                 {
-                    if (Msg.Length % 2 != 0) { MessageBox.Show("16进制必须为偶数位，请检查！", "Error", MessageBoxButtons.OK); return; }
+                    Msg = Msg.Replace(" ", "");
+                    Msg = Msg.Replace("-", "");
+                    Msg = Msg.Replace("0x", "");
+                    Msg = Msg.Replace("0X", "");
+                    if (Msg.Length % 2 != 0) { MessageBox.Show("16进制必须为偶数位，请检查！", "Error", MessageBoxButtons.OK); return false; }
                     byte[] buf = HexStringToByteArray(Msg);
                     Console.WriteLine(BitConverter.ToString(buf));
                     DeviceUI.ComDevice.Write(buf, 0, buf.Length);
+                    return true;
                 }
                 else
                 {
                     DeviceUI.ComDevice.WriteLine(Msg);
+                    return true;
                 }
             }
             else
             {
                 MessageBox.Show("COM处于断开状态，请检查！", DeviceUI.MoudleConnString_Ext + " - " + DeviceUI.ComDevice.DeviceDiscription);
+                return false ;
             }
-            DeviceClose();
         }
 
         /// <summary>
@@ -70,28 +73,8 @@ namespace CMNCOM
             DeviceClose();
             Thread.Sleep(10);
             DeviceOpen();
-            if (DeviceUI.ComDevice.IsOpen)
-            {
-                //MessageBox.Show("Pause", "Pause", MessageBoxButtons.OK);
-                if (Send_hexBool)
-                {
-                    if (Msg.Length % 2 != 0) { MessageBox.Show("16进制必须为偶数位，请检查！", "Error", MessageBoxButtons.OK); return null; }
-                    byte[] buf = HexStringToByteArray(Msg);
-                    Console.WriteLine(BitConverter.ToString(buf));
-                    DeviceUI.ComDevice.Write(buf, 0, buf.Length);
-                }
-                else
-                {
-                    DeviceUI.ComDevice.WriteLine(Msg);
-                }
-            }
-            else
-            {
-                MessageBox.Show("COM处于断开状态，请检查！", DeviceUI.MoudleConnString_Ext + " - " + DeviceUI.ComDevice.DeviceDiscription);
-                return null;
-            }
-            string str=RecieveMsg(Recive_hexBool);
-            
+            if (!SendMsg(Send_hexBool, Msg)) return null;
+            string str = RecieveMsg(Recive_hexBool);
             DeviceClose();
             return str;
         }
@@ -110,28 +93,8 @@ namespace CMNCOM
             DeviceClose();
             Thread.Sleep(10);
             DeviceOpen();
-            if (DeviceUI.ComDevice.IsOpen)
-            {
-                //MessageBox.Show("Pause", "Pause", MessageBoxButtons.OK);
-                if (Send_hexBool)
-                {
-                    if (Msg.Length % 2 != 0) { MessageBox.Show("16进制必须为偶数位，请检查！", "Error", MessageBoxButtons.OK); return null; }
-                    byte[] buf = HexStringToByteArray(Msg);
-                    Console.WriteLine(BitConverter.ToString(buf));
-                    DeviceUI.ComDevice.Write(buf, 0, buf.Length);
-                }
-                else
-                {
-                    DeviceUI.ComDevice.WriteLine(Msg);
-                }
-            }
-            else
-            {
-                MessageBox.Show("COM处于断开状态，请检查！", DeviceUI.MoudleConnString_Ext + " - " + DeviceUI.ComDevice.DeviceDiscription);
-                return null;
-            }
+            if(!SendMsg(Send_hexBool, Msg)) return null;
             string str = RecieveMsg(Recive_hexBool,RTimeOut);
-
             DeviceClose();
             return str;
         }
@@ -145,38 +108,42 @@ namespace CMNCOM
         /// <returns>返回字符串类型的接收到的数据</returns>
         public string RecieveMsg(bool hexBool, int timeout)
         {
-            string str = null;
-            int inti = 0;
+            string str = null;                             
+            int inti = 0,ByteNum = 0;
             do
             {
-                Thread.Sleep(100);
+                ByteNum = DeviceUI.ComDevice.BytesToRead;
+                Thread.Sleep(1);
                 inti += 1;
                 //Console.WriteLine("inti："+inti);
                 //15S
             }
-            while ((DeviceUI.ComDevice.BytesToRead == 0) && (inti < timeout*10));
-            if (inti >= timeout * 10)
+            while ((ByteNum == 0) && (inti < timeout*1000));
+            if (ByteNum == 0)
             {
-                MessageBox.Show("读取数据包个数为0，等待超时！("+ timeout + "S)", DeviceUI.MoudleConnString_Ext + " - " + DeviceUI.ComDevice.DeviceDiscription);
+                if (timeout!=1) MessageBox.Show("读取数据包个数为0，等待超时！("+ timeout + "S)", DeviceUI.MoudleConnString_Ext + " - " + DeviceUI.ComDevice.DeviceDiscription);
                 return str;
             }
             Thread.Sleep(500);
             try
             {
-                string response = DeviceUI.ComDevice.ReadLine();
+                //string response = DeviceUI.ComDevice.ReadLine();//当返回值没有换行符时,就死了
+                
+                    
                 if (hexBool)
                 {
-                    byte[] byteArray = System.Text.Encoding.ASCII.GetBytes(response);
-                    String RecvDataText = null;
-                    for (int i = 0; i < byteArray.Length - 1; i++)
-                    {
-                        RecvDataText += (byteArray[i].ToString("X2") + " ");
-                    }
-                    str = RecvDataText;
+                    int buffersize = ByteNum;   //十六进制数的大小（可调整数字大小）
+                    byte[] buffer = new Byte[buffersize];   //创建缓冲区
+                    DeviceUI.ComDevice.Read(buffer, 0, buffersize);
+                    str = ByteArrayToHexString(buffer);
                 }
                 else
                 {
-                    str = response;
+                    while (DeviceUI.ComDevice.BytesToRead > 0)
+                    {
+                        Thread.Sleep(150);
+                        str += DeviceUI.ComDevice.ReadExisting();
+                    }
                 }
             }
             catch (TimeoutException)
@@ -185,7 +152,7 @@ namespace CMNCOM
                 return str;
             }
             return str;
-        }
+        }     
 
         /// <summary>
         /// Recieve Message via COM,数据包个数为0时，最多只等待1S，且超时不提醒，
@@ -195,60 +162,15 @@ namespace CMNCOM
         /// <returns>返回字符串类型的接收到的数据</returns>
         public string RecieveMsg(bool hexBool)
         {
-            string str = null;
-            int inti = 0;
-            do
-            {
-                Thread.Sleep(100);
-                inti += 1;
-                //Console.WriteLine("inti："+inti);
-                //15S
-            }
-            while ((DeviceUI.ComDevice.BytesToRead == 0) && (inti < 1 * 10));
-            if (inti >= 1* 10)
-            {
-                //MessageBox.Show("读取数据包个数为0，等待超时！(" + 1 + "S)", DeviceUI.MoudleConnString_Ext + " - " + DeviceUI.ComDevice.DeviceDiscription);
-                return str;
-            }
-            Thread.Sleep(500);
-            try
-            {
-                string response = DeviceUI.ComDevice.ReadLine();
-                if (hexBool)
-                {
-                    byte[] byteArray = System.Text.Encoding.ASCII.GetBytes(response);
-                    String RecvDataText = null;
-                    for (int i = 0; i < byteArray.Length - 1; i++)
-                    {
-                        RecvDataText += (byteArray[i].ToString("X2") + " ");
-                    }
-                    str = RecvDataText;
-                }
-                else
-                {
-                    str = response;
-                }
-            }
-            catch (TimeoutException)
-            {
-                MessageBox.Show("读取数据包个数包个数不为0，但处理超时！", DeviceUI.MoudleConnString_Ext + " - " + DeviceUI.ComDevice.DeviceDiscription);
-                return str;
-            }
-            return str;
+            return RecieveMsg(hexBool, 1);
         }
-
-        /// <summary>
-        /// DeviceUI ComDevice Open
-        /// </summary>
-        public void DeviceOpen()
+    
+        private void DeviceOpen()
         {
             DeviceUI.ComDevice.Open();
         }
-
-        /// <summary>
-        ///  DeviceUI ComDevice Close
-        /// </summary>
-        public void DeviceClose()
+ 
+        private void DeviceClose()
         {
             DeviceUI.ComDevice.Close();
         }
@@ -263,6 +185,20 @@ namespace CMNCOM
                 buffer[i / 2] = (byte)Convert.ToByte(s.Substring(i, 2), 16);
             }
             return buffer;
+        }
+
+        //字节数组转16进制字符串
+        private static string ByteArrayToHexString(byte[] bytes)
+        {
+            string returnStr = "";
+            if (bytes != null)
+            {
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    returnStr += bytes[i].ToString("X2");
+                }
+            }
+            return returnStr;
         }
 
 

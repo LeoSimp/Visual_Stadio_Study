@@ -152,6 +152,9 @@ namespace CMNCOM
             else
             {
                 logRichTxt.AppendText(strLog + "\r\n");
+                logRichTxt.Select(logRichTxt.Text.Length, 0);
+                logRichTxt.ScrollToCaret();
+
             }
         }
 

@@ -21,7 +21,7 @@ namespace CMNCOM
         public SmplUsngForm()
         {
             InitializeComponent();
-            AddUsrControl(this.DevPanel,"PSP-603");
+            AddUsrControl(this.DevPanel,"COMMON");
         }
 
         /// <summary>

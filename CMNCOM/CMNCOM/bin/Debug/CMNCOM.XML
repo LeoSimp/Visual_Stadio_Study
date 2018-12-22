@@ -91,16 +91,6 @@
             <param name="hexBool">代表发送的字符串是否为Hex</param>
             <returns>返回字符串类型的接收到的数据</returns>
         </member>
-        <member name="M:CMNCOM.EMoudle.DeviceOpen">
-            <summary>
-            DeviceUI ComDevice Open
-            </summary>
-        </member>
-        <member name="M:CMNCOM.EMoudle.DeviceClose">
-            <summary>
-             DeviceUI ComDevice Close
-            </summary>
-        </member>
         <member name="M:CMNCOM.Program.Main">
             <summary>
             应用程序的主入口点。(当为类库时就没有入口点)
