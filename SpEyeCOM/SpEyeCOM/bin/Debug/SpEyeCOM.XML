@@ -4,110 +4,110 @@
         <name>SpEyeCOM</name>
     </assembly>
     <members>
-        <member name="M:SpEye_Demo.tools.fcheck(System.String)">
+        <member name="M:SpEyeCOM.tools.fcheck(System.String)">
             <summary>
             判断文件是否存在，如果不存在，创建
             </summary>
             <param name="path"></param>
         </member>
-        <member name="T:SpEye_Demo.UserControl_UI">
+        <member name="T:SpEyeCOM.UserControl_UI">
             <summary>
             
             </summary>
         </member>
-        <member name="F:SpEye_Demo.UserControl_UI.MoudleConnString">
+        <member name="F:SpEyeCOM.UserControl_UI.MoudleConnString">
             <summary>
             程序集名字
             </summary>
         </member>
-        <member name="F:SpEye_Demo.UserControl_UI.MoudleConnString_Ext">
+        <member name="F:SpEyeCOM.UserControl_UI.MoudleConnString_Ext">
             <summary>
             程序集名字+后缀
             </summary>
         </member>
-        <member name="M:SpEye_Demo.UserControl_UI.#ctor">
+        <member name="M:SpEyeCOM.UserControl_UI.#ctor">
             <summary>
             
             </summary>
         </member>
-        <member name="M:SpEye_Demo.UserControl_UI.OpenEXE">
+        <member name="M:SpEyeCOM.UserControl_UI.OpenEXE">
             <summary>
             
             </summary>
         </member>
-        <member name="M:SpEye_Demo.UserControl_UI.CloseEXE">
+        <member name="M:SpEyeCOM.UserControl_UI.CloseEXE">
             <summary>
             
             </summary>
         </member>
-        <member name="M:SpEye_Demo.UserControl_UI.MiniSizeEXE">
+        <member name="M:SpEyeCOM.UserControl_UI.MiniSizeEXE">
             <summary>
             
             </summary>
         </member>
-        <member name="M:SpEye_Demo.UserControl_UI.BarcodeRead">
+        <member name="M:SpEyeCOM.UserControl_UI.BarcodeRead">
             <summary>
             
             </summary>
             <returns></returns>
         </member>
-        <member name="M:SpEye_Demo.UserControl_UI.qBarcodeRead">
+        <member name="M:SpEyeCOM.UserControl_UI.qBarcodeRead">
             <summary>
             With EXE Open+MiniSize+Read is a Quick BarcodeRead
             </summary>
             <returns></returns>
         </member>
-        <member name="F:SpEye_Demo.UserControl_UI.components">
+        <member name="F:SpEyeCOM.UserControl_UI.components">
             <summary> 
             必需的设计器变量。
             </summary>
         </member>
-        <member name="M:SpEye_Demo.UserControl_UI.Dispose(System.Boolean)">
+        <member name="M:SpEyeCOM.UserControl_UI.Dispose(System.Boolean)">
             <summary> 
             清理所有正在使用的资源。
             </summary>
             <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
         </member>
-        <member name="M:SpEye_Demo.UserControl_UI.InitializeComponent">
+        <member name="M:SpEyeCOM.UserControl_UI.InitializeComponent">
             <summary> 
             设计器支持所需的方法 - 不要修改
             使用代码编辑器修改此方法的内容。
             </summary>
         </member>
-        <member name="T:SpEye_Demo.SmplUsngForm">
+        <member name="T:SpEyeCOM.SmplUsngForm">
             <summary>
             
             </summary>
         </member>
-        <member name="M:SpEye_Demo.SmplUsngForm.#ctor">
+        <member name="M:SpEyeCOM.SmplUsngForm.#ctor">
             <summary>
             
             </summary>
         </member>
-        <member name="M:SpEye_Demo.SmplUsngForm.AddUsrControl(System.Windows.Forms.Panel)">
+        <member name="M:SpEyeCOM.SmplUsngForm.AddUsrControl(System.Windows.Forms.Panel)">
             <summary>
             Add UserControl into the panel of the sample form
             </summary>
             <param name="p">is a pannel</param>
         </member>
-        <member name="F:SpEye_Demo.SmplUsngForm.components">
+        <member name="F:SpEyeCOM.SmplUsngForm.components">
             <summary>
             必需的设计器变量。
             </summary>
         </member>
-        <member name="M:SpEye_Demo.SmplUsngForm.Dispose(System.Boolean)">
+        <member name="M:SpEyeCOM.SmplUsngForm.Dispose(System.Boolean)">
             <summary>
             清理所有正在使用的资源。
             </summary>
             <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
         </member>
-        <member name="M:SpEye_Demo.SmplUsngForm.InitializeComponent">
+        <member name="M:SpEyeCOM.SmplUsngForm.InitializeComponent">
             <summary>
             设计器支持所需的方法 - 不要修改
             使用代码编辑器修改此方法的内容。
             </summary>
         </member>
-        <member name="M:SpEye_Demo.Program.Main">
+        <member name="M:SpEyeCOM.Program.Main">
             <summary>
             应用程序的主入口点。
             </summary>

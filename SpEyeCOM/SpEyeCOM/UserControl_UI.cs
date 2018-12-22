@@ -12,7 +12,7 @@ using System.IO;
 using INIFileReadWrite;
 using System.Threading;
 
-namespace SpEye_Demo
+namespace SpEyeCOM
 {
     /// <summary>
     /// 

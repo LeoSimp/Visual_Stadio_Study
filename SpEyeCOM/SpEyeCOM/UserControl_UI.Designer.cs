@@ -1,4 +1,4 @@
-﻿namespace SpEye_Demo
+﻿namespace SpEyeCOM
 {
     partial class UserControl_UI
     {
