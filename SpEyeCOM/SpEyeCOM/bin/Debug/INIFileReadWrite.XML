@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>INIFileReadWrite</name>
+    </assembly>
+    <members>
+        <member name="T:INIFileReadWrite.OperateIniFile">
+              <summary> 
+              用于被外部函数引用的类 
+              主要包含ReadIniData()和WriteIniData()方法，请参考注释
+              </summary> 
+        </member>
+        <member name="M:INIFileReadWrite.OperateIniFile.ReadIniData(System.String,System.String,System.String,System.String)">
+              <summary> 读Ini文件    
+              </summary> 
+              <param name="Section">表示文件中的[]部分</param>
+              <param name="Key">表示文件中=左边的关键字</param>
+              <param name="NoText">设置文件中不存在Key关键字时要返回的值，用于提示不存在Key关键字</param>
+              <param name="iniFilePath">表示绝对文件路径，包含文件名</param>
+              <returns>返回文件中=右边的值，当文件不存在时返回空值</returns>
+        </member>
+        <member name="M:INIFileReadWrite.OperateIniFile.WriteIniData(System.String,System.String,System.String,System.String)">
+              <summary> 读Ini文件    
+              </summary> 
+              <param name="Section">表示文件中的[]部分</param>
+              <param name="Key">表示文件中=左边的关键字</param>
+              <param name="Value">表示文件中要写入到=右边的值</param>
+              <param name="iniFilePath">表示绝对文件路径，包含文件名</param>
+              <returns>True or False</returns>
+        </member>
+    </members>
+</doc>

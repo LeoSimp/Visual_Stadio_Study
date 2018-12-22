@@ -1,0 +1,16 @@
+D:\visual studio 2015\Projects\SpEye_Demo\SpEye_Demo\obj\Debug\SpEye_Demo.exe
+D:\visual studio 2015\Projects\SpEye_Demo\SpEye_Demo\obj\Debug\SpEye_Demo.pdb
+D:\visual studio 2015\Projects\SpEyeCOM\SpEyeCOM\bin\Debug\SpEyeCOM.XML
+D:\visual studio 2015\Projects\SpEyeCOM\SpEyeCOM\bin\Debug\SpEyeCOM.pdb
+D:\visual studio 2015\Projects\SpEyeCOM\SpEyeCOM\bin\Debug\CMNCOM.dll
+D:\visual studio 2015\Projects\SpEyeCOM\SpEyeCOM\bin\Debug\CMNCOM.pdb
+D:\visual studio 2015\Projects\SpEyeCOM\SpEyeCOM\bin\Debug\CMNCOM.xml
+D:\visual studio 2015\Projects\SpEyeCOM\SpEyeCOM\bin\Debug\INIFileReadWrite.xml
+D:\visual studio 2015\Projects\SpEyeCOM\SpEyeCOM\obj\Debug\SpEyeCOM.csprojResolveAssemblyReference.cache
+D:\visual studio 2015\Projects\SpEyeCOM\SpEyeCOM\obj\Debug\SpEye_Demo.UserControl_UI.resources
+D:\visual studio 2015\Projects\SpEyeCOM\SpEyeCOM\obj\Debug\SpEye_Demo.SmplUsngForm.resources
+D:\visual studio 2015\Projects\SpEyeCOM\SpEyeCOM\obj\Debug\SpEyeCOM.Properties.Resources.resources
+D:\visual studio 2015\Projects\SpEyeCOM\SpEyeCOM\obj\Debug\SpEyeCOM.csproj.GenerateResource.Cache
+D:\visual studio 2015\Projects\SpEyeCOM\SpEyeCOM\obj\Debug\SpEyeCOM.pdb
+D:\visual studio 2015\Projects\SpEyeCOM\SpEyeCOM\bin\Debug\SpEyeCOM.dll
+D:\visual studio 2015\Projects\SpEyeCOM\SpEyeCOM\obj\Debug\SpEyeCOM.dll

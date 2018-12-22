@@ -1,0 +1,13 @@
+D:\visual studio 2015\Projects\SpEye_Demo\SpEye_Demo\bin\Debug\SpEye_Demo.exe
+D:\visual studio 2015\Projects\SpEye_Demo\SpEye_Demo\bin\Debug\SpEye_Demo.pdb
+D:\visual studio 2015\Projects\SpEye_Demo\SpEye_Demo\bin\Debug\CMNCOM.dll
+D:\visual studio 2015\Projects\SpEye_Demo\SpEye_Demo\bin\Debug\CMNCOM.pdb
+D:\visual studio 2015\Projects\SpEye_Demo\SpEye_Demo\bin\Debug\CMNCOM.xml
+D:\visual studio 2015\Projects\SpEye_Demo\SpEye_Demo\obj\Debug\SpEye_Demo.csprojResolveAssemblyReference.cache
+D:\visual studio 2015\Projects\SpEye_Demo\SpEye_Demo\obj\Debug\SpEye_Demo.SmplUsngForm.resources
+D:\visual studio 2015\Projects\SpEye_Demo\SpEye_Demo\obj\Debug\SpEye_Demo.Properties.Resources.resources
+D:\visual studio 2015\Projects\SpEye_Demo\SpEye_Demo\obj\Debug\SpEye_Demo.csproj.GenerateResource.Cache
+D:\visual studio 2015\Projects\SpEye_Demo\SpEye_Demo\obj\Debug\SpEye_Demo.exe
+D:\visual studio 2015\Projects\SpEye_Demo\SpEye_Demo\obj\Debug\SpEye_Demo.pdb
+D:\visual studio 2015\Projects\SpEye_Demo\SpEye_Demo\bin\Debug\INIFileReadWrite.xml
+D:\visual studio 2015\Projects\SpEye_Demo\SpEye_Demo\obj\Debug\SpEye_Demo.UserControl_UI.resources
