@@ -126,17 +126,17 @@ namespace CMNCOM
 
         private void ButtonSend(CheckBox cb,TextBox tb)
         {           
-            WriteLog(rtb_ReciveMsg, tb.Text);
+            WriteLog(rtb_ReciveMsg, "Send: " + tb.Text );
             rtb_ReciveMsg.Update();
-            string rst = EMoudleInstance.SendReciveMsg(cb.Checked, tb.Text, cb_R_HEX.Checked);
-            WriteLog(rtb_ReciveMsg, rst + "\r\n");
+            string rst = EMoudleInstance.SendReciveMsg(cb.Checked, tb.Text, cb_R_HEX.Checked,cb0D.Checked,cb0A.Checked);
+            WriteLog(rtb_ReciveMsg, "Recieve: " + rst + "\r\n");
         }
         private void ButtonSend(CheckBox cb, TextBox tb,int TimeOut)
         {
-            WriteLog(rtb_ReciveMsg, tb.Text);
+            WriteLog(rtb_ReciveMsg, "Send: "+tb.Text);
             rtb_ReciveMsg.Update();
-            string rst = EMoudleInstance.SendReciveMsg(cb.Checked, tb.Text, cb_R_HEX.Checked,TimeOut);
-            WriteLog(rtb_ReciveMsg, rst + "\r\n");
+            string rst = EMoudleInstance.SendReciveMsg(cb.Checked, tb.Text, cb_R_HEX.Checked,TimeOut, cb0D.Checked, cb0A.Checked);
+            WriteLog(rtb_ReciveMsg, "Recieve: "+rst+"\r\n");
         }
 
 

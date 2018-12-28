@@ -16,6 +16,7 @@ namespace CMNCOM
         /// 声明DeviceUI为UserControl_UI
         /// </summary>
         public UserControl_UI DeviceUI;
+
         /// <summary>
         /// 初始化，必须指定DeviceName.Text
         /// </summary>
@@ -24,14 +25,33 @@ namespace CMNCOM
             DeviceUI = new UserControl_UI(devName);
             DeviceUI.User_Load(true);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        public void EmoudleDispose()
+        {
+            DeviceUI.ComDevice.Close();
+        }
+        /// <summary>
+        /// 适用于默认发送不带回车和换行
+        /// </summary>
+        /// <param name="hexBool"></param>
+        /// <param name="Msg"></param>
+        /// <returns></returns>
+        public bool SendMsg(bool hexBool, string Msg)
+        {
+           return SendMsg(hexBool, Msg, false, false);
+        }
 
         /// <summary>
-        /// Send Message via COM
+        /// 发送可配置带回车和换行
         /// Send完直接关闭COM，适用于无需接收数据返回的情况，比如Scanner Stop
         /// </summary>
         /// <param name="hexBool">代表发送的字符串是否为Hex</param>
-        ///  <param name="Msg">代表发送的字符串</param>
-        public bool SendMsg(bool hexBool, string Msg)
+        /// <param name="Msg">代表发送的字符串</param>
+        /// <param name="b0D"></param>
+        /// <param name="b0A"></param>
+        public bool SendMsg(bool hexBool, string Msg,bool b0D,bool b0A)
         {
             if (DeviceUI.ComDevice.IsOpen)
             {
@@ -43,14 +63,18 @@ namespace CMNCOM
                     Msg = Msg.Replace("0x", "");
                     Msg = Msg.Replace("0X", "");
                     if (Msg.Length % 2 != 0) { MessageBox.Show("16进制必须为偶数位，请检查！", "Error", MessageBoxButtons.OK); return false; }
+                    if (b0D) Msg += "0D";
+                    if (b0A) Msg += "0A";
                     byte[] buf = HexStringToByteArray(Msg);
-                    Console.WriteLine(BitConverter.ToString(buf));
+                    Console.WriteLine(BitConverter.ToString(buf));                   
                     DeviceUI.ComDevice.Write(buf, 0, buf.Length);
                     return true;
                 }
                 else
-                {
-                    DeviceUI.ComDevice.WriteLine(Msg);
+                {                  
+                    if (b0D) Msg += "\r";
+                    if (b0A) Msg += "\n";
+                    DeviceUI.ComDevice.Write(Msg);
                     return true;
                 }
             }
@@ -62,21 +86,50 @@ namespace CMNCOM
         }
 
         /// <summary>
+        /// 适用于默认发送不带回车和换行
+        /// 适用于不需要判断接收数据超时提醒的情况，最多只等待1S，且超时不提醒
+        /// </summary>
+        /// <param name="Send_hexBool"></param>
+        /// <param name="Msg"></param>
+        /// <param name="Recive_hexBool"></param>
+        /// <returns></returns>
+        public string SendReciveMsg(bool Send_hexBool, string Msg, bool Recive_hexBool)
+        {
+           return SendReciveMsg(Send_hexBool, Msg, Recive_hexBool, false, false);
+        }
+
+        /// <summary>
         /// Send Message and recieve via COM
         /// 适用于不需要判断接收数据超时提醒的情况，最多只等待1S，且超时不提醒
         /// </summary>
         /// <param name="Send_hexBool"></param>
         /// <param name="Msg"></param>
         /// <param name="Recive_hexBool"></param>
-        public string SendReciveMsg(bool Send_hexBool, string Msg,bool Recive_hexBool)
+        /// <param name="b0D"></param>
+        /// <param name="b0A"></param>
+        public string SendReciveMsg(bool Send_hexBool, string Msg,bool Recive_hexBool, bool b0D, bool b0A)
         {
             DeviceClose();
             Thread.Sleep(10);
             DeviceOpen();
-            if (!SendMsg(Send_hexBool, Msg)) return null;
+            if (!SendMsg(Send_hexBool, Msg, b0D, b0A)) return null;
             string str = RecieveMsg(Recive_hexBool);
             DeviceClose();
             return str;
+        }
+
+        /// <summary>
+        /// 适用于默认发送不带回车和换行
+        /// 适用于需要判断接收数据超时提醒的情况
+        /// </summary>
+        /// <param name="Send_hexBool"></param>
+        /// <param name="Msg"></param>
+        /// <param name="Recive_hexBool"></param>
+        /// <param name="RTimeOut"></param>
+        /// <returns></returns>
+        public string SendReciveMsg(bool Send_hexBool, string Msg, bool Recive_hexBool, int RTimeOut)
+        {
+            return SendReciveMsg(Send_hexBool, Msg, Recive_hexBool, RTimeOut, false, false);
         }
 
         /// <summary>
@@ -87,13 +140,15 @@ namespace CMNCOM
         /// <param name="Msg"></param>
         /// <param name="Recive_hexBool"></param>
         /// <param name="RTimeOut"></param>
+        /// <param name="b0D"></param>
+        /// <param name="b0A"></param>
         /// <returns></returns>
-        public string SendReciveMsg(bool Send_hexBool, string Msg, bool Recive_hexBool,int RTimeOut)
+        public string SendReciveMsg(bool Send_hexBool, string Msg, bool Recive_hexBool,int RTimeOut, bool b0D, bool b0A)
         {
             DeviceClose();
             Thread.Sleep(10);
             DeviceOpen();
-            if(!SendMsg(Send_hexBool, Msg)) return null;
+            if(!SendMsg(Send_hexBool, Msg,b0D,b0A)) return null;
             string str = RecieveMsg(Recive_hexBool,RTimeOut);
             DeviceClose();
             return str;
@@ -167,11 +222,17 @@ namespace CMNCOM
     
         private void DeviceOpen()
         {
-            DeviceUI.ComDevice.Open();
+            try
+            {
+                 if (!DeviceUI.ComDevice.IsOpen) DeviceUI.ComDevice.Open();
+            }
+            catch { }
+            
         }
  
         private void DeviceClose()
         {
+            if (DeviceUI.ComDevice.IsOpen)
             DeviceUI.ComDevice.Close();
         }
 

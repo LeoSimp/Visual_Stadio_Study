@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.rtb_ReciveMsg = new System.Windows.Forms.RichTextBox();
             this.tb_SendMsg = new System.Windows.Forms.TextBox();
             this.cb_T_HEX = new System.Windows.Forms.CheckBox();
@@ -58,6 +59,9 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cb0D = new System.Windows.Forms.CheckBox();
+            this.cb0A = new System.Windows.Forms.CheckBox();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -405,11 +409,35 @@
             this.textBox2.TabIndex = 66;
             this.textBox2.DoubleClick += new System.EventHandler(this.textBox2_DoubleClick);
             // 
+            // cb0D
+            // 
+            this.cb0D.AutoSize = true;
+            this.cb0D.Location = new System.Drawing.Point(664, 377);
+            this.cb0D.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cb0D.Name = "cb0D";
+            this.cb0D.Size = new System.Drawing.Size(75, 19);
+            this.cb0D.TabIndex = 66;
+            this.cb0D.Text = "0D回车";
+            this.cb0D.UseVisualStyleBackColor = true;
+            // 
+            // cb0A
+            // 
+            this.cb0A.AutoSize = true;
+            this.cb0A.Location = new System.Drawing.Point(736, 376);
+            this.cb0A.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cb0A.Name = "cb0A";
+            this.cb0A.Size = new System.Drawing.Size(75, 19);
+            this.cb0A.TabIndex = 67;
+            this.cb0A.Text = "0A换行";
+            this.cb0A.UseVisualStyleBackColor = true;
+            // 
             // FormDiag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(946, 465);
+            this.Controls.Add(this.cb0A);
+            this.Controls.Add(this.cb0D);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnSend);
@@ -464,6 +492,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox cb0D;
+        private System.Windows.Forms.CheckBox cb0A;
+        private System.IO.Ports.SerialPort serialPort1;
     }
 }
 

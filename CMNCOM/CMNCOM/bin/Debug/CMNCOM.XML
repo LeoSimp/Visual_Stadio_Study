@@ -46,15 +46,40 @@
             初始化，必须指定DeviceName.Text
             </summary>
         </member>
+        <member name="M:CMNCOM.EMoudle.EmoudleDispose">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:CMNCOM.EMoudle.SendMsg(System.Boolean,System.String)">
             <summary>
-            Send Message via COM
+            适用于默认发送不带回车和换行
+            </summary>
+            <param name="hexBool"></param>
+            <param name="Msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CMNCOM.EMoudle.SendMsg(System.Boolean,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            发送可配置带回车和换行
             Send完直接关闭COM，适用于无需接收数据返回的情况，比如Scanner Stop
             </summary>
             <param name="hexBool">代表发送的字符串是否为Hex</param>
-             <param name="Msg">代表发送的字符串</param>
+            <param name="Msg">代表发送的字符串</param>
+            <param name="b0D"></param>
+            <param name="b0A"></param>
         </member>
         <member name="M:CMNCOM.EMoudle.SendReciveMsg(System.Boolean,System.String,System.Boolean)">
+            <summary>
+            适用于默认发送不带回车和换行
+            适用于不需要判断接收数据超时提醒的情况，最多只等待1S，且超时不提醒
+            </summary>
+            <param name="Send_hexBool"></param>
+            <param name="Msg"></param>
+            <param name="Recive_hexBool"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CMNCOM.EMoudle.SendReciveMsg(System.Boolean,System.String,System.Boolean,System.Boolean,System.Boolean)">
             <summary>
             Send Message and recieve via COM
             适用于不需要判断接收数据超时提醒的情况，最多只等待1S，且超时不提醒
@@ -62,8 +87,21 @@
             <param name="Send_hexBool"></param>
             <param name="Msg"></param>
             <param name="Recive_hexBool"></param>
+            <param name="b0D"></param>
+            <param name="b0A"></param>
         </member>
         <member name="M:CMNCOM.EMoudle.SendReciveMsg(System.Boolean,System.String,System.Boolean,System.Int32)">
+            <summary>
+            适用于默认发送不带回车和换行
+            适用于需要判断接收数据超时提醒的情况
+            </summary>
+            <param name="Send_hexBool"></param>
+            <param name="Msg"></param>
+            <param name="Recive_hexBool"></param>
+            <param name="RTimeOut"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CMNCOM.EMoudle.SendReciveMsg(System.Boolean,System.String,System.Boolean,System.Int32,System.Boolean,System.Boolean)">
             <summary>
             Send Message and recieve via COM
             适用于需要判断接收数据超时提醒的情况
@@ -72,6 +110,8 @@
             <param name="Msg"></param>
             <param name="Recive_hexBool"></param>
             <param name="RTimeOut"></param>
+            <param name="b0D"></param>
+            <param name="b0A"></param>
             <returns></returns>
         </member>
         <member name="M:CMNCOM.EMoudle.RecieveMsg(System.Boolean,System.Int32)">
@@ -101,17 +141,32 @@
             This is a Form of Sample using this dll
             </summary>
         </member>
+        <member name="M:CMNCOM.SmplUsngForm.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="devName"></param>
+        </member>
         <member name="M:CMNCOM.SmplUsngForm.#ctor">
             <summary>
-            初始化
+            
             </summary>
+        </member>
+        <member name="M:CMNCOM.SmplUsngForm.AddUsrControl_NoAutoFormD(System.Windows.Forms.Panel,System.String)">
+            <summary>
+            Add UserControl into the panel of the sample form
+            适用需要手动打开调试界面，程式先不加载
+            </summary>
+            <param name="p">is a pannel</param>
+            <param name="devName">is the UserControl_UI.DeviceName.Text</param>
         </member>
         <member name="M:CMNCOM.SmplUsngForm.AddUsrControl(System.Windows.Forms.Panel,System.String)">
             <summary>
             Add UserControl into the panel of the sample form
+            适用不需要手动打开调试界面，程式自动加载
             </summary>
-            <param name="p">is a pannel</param>
-            <param name="devName">is the UserControl_UI.DeviceName.Text</param>
+            <param name="p"></param>
+            <param name="devName"></param>
         </member>
         <member name="F:CMNCOM.SmplUsngForm.components">
             <summary>

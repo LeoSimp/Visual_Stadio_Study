@@ -15,7 +15,7 @@ namespace CMNCOM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SmplUsngForm());
+            Application.Run(new SmplUsngForm("COMMON"));
         }
     }
 }
