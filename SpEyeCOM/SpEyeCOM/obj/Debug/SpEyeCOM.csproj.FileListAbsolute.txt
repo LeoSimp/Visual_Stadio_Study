@@ -19,7 +19,6 @@ D:\GitHub\Visual_Studio_Study\SpEyeCOM\SpEyeCOM\bin\Debug\SpEyeCOM.pdb
 D:\GitHub\Visual_Studio_Study\SpEyeCOM\SpEyeCOM\bin\Debug\CMNCOM.dll
 D:\GitHub\Visual_Studio_Study\SpEyeCOM\SpEyeCOM\bin\Debug\CMNCOM.pdb
 D:\GitHub\Visual_Studio_Study\SpEyeCOM\SpEyeCOM\bin\Debug\CMNCOM.xml
-D:\GitHub\Visual_Studio_Study\SpEyeCOM\SpEyeCOM\bin\Debug\INIFileReadWrite.xml
 D:\GitHub\Visual_Studio_Study\SpEyeCOM\SpEyeCOM\obj\Debug\SpEyeCOM.csprojResolveAssemblyReference.cache
 D:\GitHub\Visual_Studio_Study\SpEyeCOM\SpEyeCOM\obj\Debug\SpEyeCOM.UserControl_UI.resources
 D:\GitHub\Visual_Studio_Study\SpEyeCOM\SpEyeCOM\obj\Debug\SpEyeCOM.SmplUsngForm.resources

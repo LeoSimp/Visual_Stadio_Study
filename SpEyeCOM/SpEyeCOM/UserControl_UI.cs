@@ -217,7 +217,7 @@ namespace SpEyeCOM
             if (!CHKWINExist(EXETittle, out handle))
             {
                 OpenEXE();
-                Thread.Sleep(2000);//Sleep to wait for Camera Load
+                Thread.Sleep(3000);//Sleep to wait for Camera Load
             } 
             MiniSizeEXE();
             string str=BarcodeRead();
